@@ -104,8 +104,8 @@ body,
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
   }
   .input-custom {
-    width: 100%;
-    padding: 15px 10px 20px 5px;
+    width: 70%;
+    padding: 15px 10px 15px 15px;
     outline: none;
     overflow-y: scroll;
     -ms-overflow-style: none;
