@@ -3,7 +3,11 @@ interface MainLayoutProps {
 }
 
 const MainLayout = ({ children }: MainLayoutProps) => {
-  return <div>{children}</div>;
+  return (
+    <main className="flex flex-col items-center justify-between bg-slate-300">
+      {children}
+    </main>
+  );
 };
 
 export default MainLayout;
