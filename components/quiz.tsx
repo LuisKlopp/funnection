@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Quiz, Results } from "@/types/quiz.types";
+import { QuizType, ResultsType } from "@/types/quiz.types";
 import axios from "axios";
 import Link from "next/link";
 
 const Quiz = () => {
-  const [quiz, setQuiz] = useState<Quiz[]>([]);
+  const [quiz, setQuiz] = useState<QuizType[]>([]);
   const [selectedQuiz, setSelectedQuiz] = useState(0);
-  const [results, setResults] = useState<Results | null>(null);
+  const [results, setResults] = useState<ResultsType | null>(null);
 
   useEffect(() => {
     axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/quiz`).then((response) => {
