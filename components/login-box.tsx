@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { Input } from "@/components/input";
 import { Button } from "@/components/button";
@@ -8,6 +9,8 @@ import { Button } from "@/components/button";
 export const LoginBox = () => {
   const [nickname, setNickname] = useState("");
   const [mbti, setMbti] = useState("");
+
+  const router = useRouter();
 
   const handleSubmit = async () => {
     const response = await fetch(
@@ -24,6 +27,7 @@ export const LoginBox = () => {
 
     if (data.access_token) {
       localStorage.setItem("access_token", data.access_token);
+      router.push("/main-page", { scroll: false });
     } else {
       console.error("Access token not found in response");
     }
