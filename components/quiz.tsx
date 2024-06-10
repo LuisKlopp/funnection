@@ -30,17 +30,21 @@ const Quiz = () => {
   };
 
   return (
-    <div>
-      <h1>퀴즈 선택</h1>
-      {quiz.map((q) => (
-        <Link
-          href={`/main-page/${q.id}`}
-          key={q.id}
-          onClick={() => handleQuizSelection(q.id)}
-        >
-          {q.id}
-        </Link>
-      ))}
+    <div className="flex flex-col gap-4">
+      <h1 className="text-5xl">펀넥션 박스 선택</h1>
+      <div className="flex gap-4 justify-center">
+        {quiz.map((q) => (
+          <div key={q.id} className="border-2 bg-white border-slate-500 px-2">
+            <Link
+              className="text-lg"
+              href={`/main-page/${q.id}`}
+              onClick={() => handleQuizSelection(q.id)}
+            >
+              {q.id}
+            </Link>
+          </div>
+        ))}
+      </div>
       {selectedQuiz !== 0 && (
         <div>
           <button onClick={handleResults}>결과 확인</button>
