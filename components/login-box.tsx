@@ -1,10 +1,10 @@
 "use client";
 
 import { ChangeEvent, useState } from "react";
-import { useRouter } from "next/navigation";
 
-import { Input } from "@/components/input";
 import { Button } from "@/components/button";
+import { Input } from "@/components/input";
+import { useRouter } from "next/navigation";
 
 export const LoginBox = () => {
   const [nickname, setNickname] = useState("");
@@ -21,7 +21,7 @@ export const LoginBox = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ nickname, mbti }),
-      }
+      },
     );
     const data = await response.json();
 

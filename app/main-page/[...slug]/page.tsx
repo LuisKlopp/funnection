@@ -1,6 +1,6 @@
+import YesNoCounter from "@/components/yes-no-counter";
 import { QuizType } from "@/types/quiz.types";
 import axios from "axios";
-import YesNoCounter from "@/components/yes-no-counter";
 
 type QuizDetailPageProps = {
   params: { slug: string[] };
@@ -8,7 +8,7 @@ type QuizDetailPageProps = {
 
 const fetchQuizDetail = async (id: string): Promise<QuizType> => {
   const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/quiz/${id}`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/quiz/${id}`,
   );
   return response.data;
 };
