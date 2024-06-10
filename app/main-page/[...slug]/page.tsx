@@ -1,38 +1,27 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import axios from "axios";
 import { QuizType } from "@/types/quiz.types";
+import axios from "axios";
 
-export default function QuizDetailPage() {
-  const [quiz, setQuiz] = useState<QuizType[]>([]);
-  const pathName = usePathname();
-  const parts = pathName.split("/");
-  const questionId = Number(parts[parts.length - 1]);
+type QuizDetailPageProps = {
+  params: { slug: string[] };
+};
 
-  useEffect(() => {
-    const fetchQuiz = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/quiz`
-        );
-        setQuiz(response.data);
-      } catch (error) {
-        console.error("Error fetching quiz:", error);
-      }
-    };
+const fetchQuizDetail = async (id: string): Promise<QuizType> => {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/quiz/${id}`
+  );
+  return response.data;
+};
 
-    fetchQuiz();
-  }, []);
-
-  const detailQuiz = quiz.find((item) => questionId === item.id);
+const QuizDetailPage = async ({ params }: QuizDetailPageProps) => {
+  const id = params.slug[0];
+  console.log(id);
+  const quiz = await fetchQuizDetail(id);
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center gap-10 overflow-x-hidden">
-      <div className="w-[50%] flex justify-center items-center break-words">
+      <div className="w-[500px] flex justify-center overflow-hidden break-words whitespace-normal">
         <span className="text-5xl text-slate-700 font-semibold text-center">
-          {detailQuiz?.question}
+          {quiz.question}
         </span>
       </div>
       <div className="flex gap-36">
@@ -47,4 +36,6 @@ export default function QuizDetailPage() {
       </div>
     </div>
   );
-}
+};
+
+export default QuizDetailPage;

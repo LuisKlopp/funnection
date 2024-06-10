@@ -34,7 +34,10 @@ const Quiz = () => {
       <h1 className="text-5xl">펀넥션 박스 선택</h1>
       <div className="flex gap-4 justify-center">
         {quiz.map((q) => (
-          <div key={q.id} className="border-2 bg-white border-slate-500 px-2">
+          <div
+            key={q.id}
+            className="border-2 bg-white border-slate-500 px-2 cursor-pointer"
+          >
             <Link
               className="text-lg"
               href={`/main-page/${q.id}`}
