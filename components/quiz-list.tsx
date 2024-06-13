@@ -8,7 +8,7 @@ const fetchQuizzes = async (): Promise<QuizType[]> => {
   return response.data;
 };
 
-const QuizPage = async () => {
+const QuizList = async () => {
   const quizzes = await fetchQuizzes();
 
   return (
@@ -31,4 +31,4 @@ const QuizPage = async () => {
   );
 };
 
-export default QuizPage;
+export default QuizList;

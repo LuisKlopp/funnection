@@ -9,10 +9,12 @@ import { useRouter } from "next/navigation";
 export const LoginBox = () => {
   const [nickname, setNickname] = useState("");
   const [mbti, setMbti] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   const handleSubmit = async () => {
+    setLoading(true);
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL}/auth/signup`,
       {
@@ -27,9 +29,10 @@ export const LoginBox = () => {
 
     if (data.access_token) {
       localStorage.setItem("access_token", data.access_token);
-      router.push("/main-page", { scroll: false });
+      router.push("/question-page", { scroll: false });
     } else {
       console.error("Access token not found in response");
+      setLoading(false);
     }
   };
 
@@ -49,7 +52,10 @@ export const LoginBox = () => {
         value={mbti}
         onChange={(e: ChangeEvent<HTMLInputElement>) => setMbti(e.target.value)}
       />
-      <Button buttonTitle="로그인" onClick={handleSubmit} />
+      <Button
+        buttonTitle={loading ? "로딩중..." : "로그인"}
+        onClick={handleSubmit}
+      />
     </div>
   );
 };

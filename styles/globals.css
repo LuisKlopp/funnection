@@ -62,11 +62,27 @@ body,
 
 .select-box:active {
   background-color: #f1f5f9;
+  color: black;
 }
 
 .clicked-style {
   background-color: #4caf50;
   color: white;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
 }
 
 @layer base {
