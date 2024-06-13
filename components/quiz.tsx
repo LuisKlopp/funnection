@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { QuizType } from "@/types/quiz.types";
 import axios from "axios";
 import Link from "next/link";
@@ -14,13 +15,15 @@ const QuizPage = async () => {
     <div className="flex flex-col gap-4">
       <h1 className="text-5xl">펀넥션 박스 선택</h1>
       <div className="flex gap-4 justify-center">
-        {quizzes.map((q) => (
+        {quizzes.map((quiz) => (
           <Link
-            key={q.id}
-            className="border-2 bg-white border-slate-500 px-2 cursor-pointer text-lg"
-            href={`/main-page/${q.id}`}
+            key={quiz.id}
+            className={cn("button-base select-box button-active", {
+              "clicked-style": quiz.isClicked,
+            })}
+            href={`/main-page/${quiz.id}`}
           >
-            {q.id}
+            {quiz.id}
           </Link>
         ))}
       </div>

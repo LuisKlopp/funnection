@@ -1,6 +1,8 @@
 import YesNoCounter from "@/components/yes-no-counter";
 import { QuizType } from "@/types/quiz.types";
 import axios from "axios";
+import { MoveLeft } from "lucide-react";
+import Link from "next/link";
 
 type QuizDetailPageProps = {
   params: { slug: string[] };
@@ -19,6 +21,9 @@ const QuizDetailPage = async ({ params }: QuizDetailPageProps) => {
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center gap-10 overflow-x-hidden">
+      <Link href={"/main-page"} className="absolute left-10 top-5">
+        <MoveLeft size={48} />
+      </Link>
       <div className="w-[500px] flex justify-center overflow-hidden break-words whitespace-normal">
         <span className="text-5xl text-slate-700 font-semibold text-center font-pretendard">
           {quiz.question}

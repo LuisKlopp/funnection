@@ -75,7 +75,7 @@ const YesNoCounter = ({ id, initialYes, initialNo }: YesNoCounterProps) => {
       <div>
         <button
           onClick={updateResults}
-          className="bg-slate-500 p-4 rounded-lg text-white font-medium"
+          className="button-base custom-button button-active"
         >
           결과 확인
         </button>

@@ -3,6 +3,7 @@ export interface QuizType {
   question: string;
   yes: number;
   no: number;
+  isClicked: boolean;
 }
 
 export interface ResultsType {
