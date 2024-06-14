@@ -58,6 +58,9 @@ body,
   color: black;
   border-radius: 4px;
   padding: 8px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .select-box:active {

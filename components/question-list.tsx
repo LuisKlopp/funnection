@@ -14,9 +14,9 @@ const QuestionList = async () => {
   const questions = await fetchQuestions();
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-5xl">펀넥션 박스 선택</h1>
-      <div className="flex gap-4 justify-center">
+    <div className="flex flex-col gap-4 items-center">
+      <h1 className="text-5xl px-5">펀넥션 박스 선택</h1>
+      <div className="flex gap-4 flex-wrap px-2">
         {questions.map((question) => (
           <Link
             key={question.id}
