@@ -58,7 +58,7 @@ body,
   color: black;
   border-radius: 4px;
   padding: 8px;
-  width: 40px;
+  width: 80px;
   display: flex;
   justify-content: center;
 }
@@ -69,8 +69,38 @@ body,
 }
 
 .clicked-style {
-  background-color: #4caf50;
+  background-color: #3786f5;
   color: white;
+}
+
+.mobile-select-box-white {
+  background-color: white;
+  border: 2px solid #64748b;
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  border-radius: 4px;
+  padding: 8px;
+  width: 73px;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-select-box-black {
+  background-color: #475569;
+  border: 2px solid #64748b;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+  padding: 8px;
+  width: 73px;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes fadeInUp {
@@ -158,6 +188,12 @@ body,
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 1px #475569;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px black;
   }
 }
 
