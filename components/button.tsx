@@ -5,11 +5,17 @@ import { cn } from "@/lib/utils";
 interface ButtonProps {
   buttonTitle: string;
   // eslint-disable-next-line no-unused-vars
-  onClick: (e: FormEvent | TouchEvent) => Promise<void>;
+  onClick: any;
   className?: string;
+  disabled?: boolean;
 }
 
-export const Button = ({ buttonTitle, onClick, className }: ButtonProps) => {
+export const Button = ({
+  buttonTitle,
+  onClick,
+  className,
+  disabled,
+}: ButtonProps) => {
   const handleClick = (e: FormEvent | TouchEvent) => {
     onClick(e);
   };
@@ -22,8 +28,12 @@ export const Button = ({ buttonTitle, onClick, className }: ButtonProps) => {
         type="button"
         className={cn(
           "w-[70%] bg-slate-600 p-4 text-white rounded-lg font-semibold text-base",
+          {
+            "bg-slate-400": disabled,
+          },
           className,
         )}
+        disabled={disabled}
       >
         {buttonTitle}
       </button>

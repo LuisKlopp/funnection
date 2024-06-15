@@ -55,6 +55,7 @@ export const LoginBox = () => {
       <Button
         buttonTitle={loading ? "로딩중..." : "로그인"}
         onClick={handleSubmit}
+        disabled={nickname === "" || mbti === ""}
       />
     </div>
   );

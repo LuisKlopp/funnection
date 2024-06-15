@@ -20,7 +20,7 @@ const QuestionList = async () => {
       <h1 className="text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
         질문 카드
       </h1>
-      <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-2 border-t-black border-b-black md:border-none">
+      <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 md:border-none">
         {questions.map((question) => (
           <Link
             key={question.id}

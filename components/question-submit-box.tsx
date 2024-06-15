@@ -11,9 +11,10 @@ interface QuestionSubmitBoxProps {
 
 export const QuestionSubmitBox = ({ questionId }: QuestionSubmitBoxProps) => {
   const [answerText, setAnswerText] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async () => {
-    await fetch(
+    const response = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL}/question/${questionId}/answer`,
       {
         method: "POST",
@@ -23,6 +24,11 @@ export const QuestionSubmitBox = ({ questionId }: QuestionSubmitBoxProps) => {
         body: JSON.stringify({ answer: answerText }),
       },
     );
+
+    if (response.ok) {
+      setAnswerText("");
+      setIsSubmitted(true);
+    }
   };
 
   return (
@@ -38,7 +44,13 @@ export const QuestionSubmitBox = ({ questionId }: QuestionSubmitBoxProps) => {
         buttonTitle="답변 제출"
         onClick={handleSubmit}
         className="font-pretendard"
+        disabled={answerText === ""}
       />
+      {isSubmitted && (
+        <div className="w-full flex justify-center">
+          <span>답변이 완료되었습니다!</span>
+        </div>
+      )}
     </div>
   );
 };

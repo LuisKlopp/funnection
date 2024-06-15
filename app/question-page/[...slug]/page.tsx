@@ -1,4 +1,5 @@
 import { QuestionSubmitBox } from "@/components/question-submit-box";
+import { ReloadButton } from "@/components/reload-button";
 import { QuestionType } from "@/types/question.types";
 import axios from "axios";
 import { MoveLeft } from "lucide-react";
@@ -35,7 +36,7 @@ const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {
           <QuestionSubmitBox questionId={id} />
         </div>
       </div>
-      <div className="w-[500px] hidden mdl:flex justify-center overflow-hidden break-words whitespace-normal">
+      <div className="w-[300px] hidden mdl:flex justify-center overflow-hidden break-words whitespace-normal flex-col gap-10">
         <span className="text-lg text-slate-700 font-semibold text-center font-pretendard">
           {question.answers.map((answer) => (
             <div key={answer.id} className="fade-in-up">
@@ -43,6 +44,7 @@ const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {
             </div>
           ))}
         </span>
+        <ReloadButton />
       </div>
     </div>
   );
