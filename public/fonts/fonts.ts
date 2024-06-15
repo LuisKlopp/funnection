@@ -49,3 +49,12 @@ export const pretendard = localFont({
     },
   ],
 });
+
+export const jua = localFont({
+  src: [
+    {
+      path: "./Jua-Regular.ttf",
+      style: "normal",
+    },
+  ],
+});

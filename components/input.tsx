@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 
 interface InputProps {
-  type: "nickname" | "mbti" | "answer";
+  type?: "nickname" | "mbti" | "answer";
   placeholder: string;
   value: string;
   // eslint-disable-next-line no-unused-vars

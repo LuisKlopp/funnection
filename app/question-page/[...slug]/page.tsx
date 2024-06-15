@@ -1,3 +1,4 @@
+import { QuestionSubmitBox } from "@/components/question-submit-box";
 import { QuestionType } from "@/types/question.types";
 import axios from "axios";
 import { MoveLeft } from "lucide-react";
@@ -23,10 +24,14 @@ const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {
       <Link href={"/question-page"} className="absolute left-10 top-5">
         <MoveLeft size={48} />
       </Link>
-      <div className="flex justify-center break-words whitespace-normal">
-        <span className="text-4xl text-slate-700 font-semibold text-center font-pretendard">
+      <div className="w-full flex flex-col items-center justify-center px-4 gap-4">
+        <span className="text-4xl text-slate-700 font-semibold text-center break-normal">
+          {question.id}.
+        </span>
+        <span className="text-4xl text-slate-700 font-semibold text-center break-normal">
           {question.question}
         </span>
+        <QuestionSubmitBox />
       </div>
       <div className="w-[500px] flex justify-center overflow-hidden break-words whitespace-normal">
         <span className="text-lg text-slate-700 font-semibold text-center font-pretendard">
