@@ -31,9 +31,11 @@ const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {
         <span className="text-4xl text-slate-700 font-semibold text-center break-normal">
           {question.question}
         </span>
-        <QuestionSubmitBox />
+        <div className="w-full mdl:hidden">
+          <QuestionSubmitBox questionId={id} />
+        </div>
       </div>
-      <div className="w-[500px] flex justify-center overflow-hidden break-words whitespace-normal">
+      <div className="w-[500px] hidden mdl:flex justify-center overflow-hidden break-words whitespace-normal">
         <span className="text-lg text-slate-700 font-semibold text-center font-pretendard">
           {question.answers.map((answer) => (
             <div key={answer.id} className="fade-in-up">
