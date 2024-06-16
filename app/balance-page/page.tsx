@@ -1,9 +1,9 @@
-import QuizList from "@/components/quiz-list";
+import BalanceList from "@/components/balance-list";
 
 export default function BalancePage() {
   return (
     <div className="w-full max-w-xl h-[100dvh] flex flex-col justify-center items-center gap-4">
-      <QuizList />
+      <BalanceList />
     </div>
   );
 }

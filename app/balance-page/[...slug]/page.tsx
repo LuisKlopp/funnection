@@ -1,4 +1,4 @@
-import YesNoCounter from "@/components/yes-no-counter";
+import { YesNoCounter } from "@/components/yes-no-counter";
 import { QuizType } from "@/types/quiz.types";
 import axios from "axios";
 import { MoveLeft } from "lucide-react";

@@ -18,7 +18,11 @@ const fetchQuizDetail = async (id: string): Promise<QuizType> => {
   return response.data;
 };
 
-const YesNoCounter = ({ id, initialYes, initialNo }: YesNoCounterProps) => {
+export const YesNoCounter = ({
+  id,
+  initialYes,
+  initialNo,
+}: YesNoCounterProps) => {
   const [yes, setYes] = useState(initialYes);
   const [no, setNo] = useState(initialNo);
 
@@ -83,5 +87,3 @@ const YesNoCounter = ({ id, initialYes, initialNo }: YesNoCounterProps) => {
     </div>
   );
 };
-
-export default YesNoCounter;
