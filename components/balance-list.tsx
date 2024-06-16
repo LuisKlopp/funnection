@@ -10,13 +10,13 @@ const fetchBalanceQuizzes = async (): Promise<QuizType[]> => {
   return response.data;
 };
 
-const balanceQuizList = async () => {
+export const BalanceQuizList = async () => {
   const quizzes = await fetchBalanceQuizzes();
 
   return (
     <div className="flex flex-col gap-4 items-center h-full">
       <h1 className="text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
-        질문 카드
+        밸런스 카드
       </h1>
       <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 md:border-none">
         {quizzes.map((quiz) => (
@@ -59,5 +59,3 @@ const balanceQuizList = async () => {
     </div>
   );
 };
-
-export default balanceQuizList;

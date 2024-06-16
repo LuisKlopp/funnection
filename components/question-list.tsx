@@ -18,7 +18,7 @@ export const QuestionList = async () => {
   return (
     <div className="flex flex-col gap-4 items-center h-full">
       <h1 className="text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
-        질문 카드
+        단답 카드
       </h1>
       <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 md:border-none">
         {questions.map((question) => (
@@ -52,12 +52,14 @@ export const QuestionList = async () => {
           </Link>
         ))}
       </div>
-      <Link
-        href={"/balance-page"}
-        className="bg-slate-500 p-4 rounded-lg text-white mb-4"
-      >
-        밸런스 게임으로 이동
-      </Link>
+      <div className="w-full flex justify-end px-4">
+        <Link
+          href={"/balance-page"}
+          className=" bg-slate-500 p-4 rounded-lg text-white mb-4"
+        >
+          밸런스 게임으로 이동
+        </Link>
+      </div>
     </div>
   );
 };
