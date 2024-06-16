@@ -59,33 +59,43 @@ export const BalanceCounter = ({
   };
 
   return (
-    <div className="flex gap-20 flex-col justify-center items-center">
-      <div className="flex gap-40">
+    <div className="flex gap-20 flex-col justify-center items-center w-full">
+      <div className="flex flex-col mdl:flex-row gap-10 mdl:gap-40 w-full justify-center">
         <div className="flex flex-col gap-20 items-center">
-          <span
-            className="text-2xl text-blue-700 drop-shadow-xl cursor-pointer"
-            onClick={incrementLeft}
-          >
-            {leftAnswer}
-          </span>
-          <span className="text-5xl text-slate-700 font-bold">{leftCount}</span>
+          <div className="bg-white px-10 py-4 rounded-lg shadow-xl w-[90%] mdl:w-auto">
+            <span
+              className="text-2xl text-blue-700 cursor-pointer"
+              onClick={incrementLeft}
+            >
+              {leftAnswer}
+            </span>
+          </div>
+          <div className="hidden mdl:block">
+            <span className="text-5xl text-slate-700 font-bold">
+              {leftCount}
+            </span>
+          </div>
         </div>
         <div className="flex flex-col gap-20 items-center">
-          <span
-            className="text-2xl text-red-700 drop-shadow-xl cursor-pointer"
-            onClick={incrementRight}
-          >
-            {rightAnswer}
-          </span>
-          <span className="text-5xl text-slate-700 font-bold">
-            {rightCount}
-          </span>
+          <div className="bg-white px-10 py-4 rounded-lg shadow-xl w-[90%] mdl:w-auto">
+            <span
+              className="text-2xl text-red-700 cursor-pointer"
+              onClick={incrementRight}
+            >
+              {rightAnswer}
+            </span>
+          </div>
+          <div className="hidden mdl:block">
+            <span className="text-5xl text-slate-700 font-bold">
+              {rightCount}
+            </span>
+          </div>
         </div>
       </div>
-      <div>
+      <div className="hidden mdl:block">
         <button
           onClick={updateResults}
-          className="button-base custom-button button-active"
+          className="button-base custom-button button-active w-[150px]"
         >
           결과 확인
         </button>

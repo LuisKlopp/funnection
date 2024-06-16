@@ -24,12 +24,15 @@ const BalanceDetailPage = async ({ params }: BalanceDetailPageProps) => {
       <Link href={"/balance-page"} className="absolute left-10 top-5">
         <MoveLeft size={48} />
       </Link>
-      <div className="flex justify-center break-words whitespace-normal">
-        <span className="text-5xl text-slate-700 font-semibold text-center font-pretendard">
+      <div className="flex justify-center break-words whitespace-normal px-4 gap-4">
+        <span className="text-4xl text-slate-700 font-semibold text-center break-normal">
+          {balance.id}.
+        </span>
+        <span className="text-4xl text-slate-700 font-semibold text-center break-keep">
           {balance.question}
         </span>
       </div>
-      <div>
+      <div className="w-full">
         <BalanceCounter
           id={id}
           initialLeft={balance.leftCount}

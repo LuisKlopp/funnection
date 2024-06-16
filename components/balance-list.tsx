@@ -17,6 +17,7 @@ export const BalanceList = async () => {
 
   return (
     <div className="flex flex-col gap-4 items-center h-full">
+      <Link href="/question-page">뒤로가기</Link>
       <h1 className="text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
         밸런스 카드
       </h1>
@@ -55,7 +56,7 @@ export const BalanceList = async () => {
       <div className="w-full flex justify-end px-4">
         <Link
           href={"/balance-page"}
-          className="bg-white px-4 py-2 rounded-lg text-slate-500 mb-4"
+          className="mb-4 button-base button-active custom-button !bg-white !text-slate-500"
         >
           OX 카드로 이동
         </Link>

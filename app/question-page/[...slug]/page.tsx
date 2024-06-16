@@ -25,16 +25,13 @@ const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {
       <Link href={"/question-page"} className="absolute left-10 top-5">
         <MoveLeft size={48} />
       </Link>
-      <div className="w-full flex flex-col items-center justify-center px-4 gap-4">
-        <span className="text-4xl text-slate-700 font-semibold text-center break-normal">
-          {question.id}.
+      <div className="w-full flex justify-center px-4 gap-4">
+        <span className="text-4xl text-slate-700 font-semibold text-center break-keep">
+          {question.id}. {question.question}
         </span>
-        <span className="text-4xl text-slate-700 font-semibold text-center break-normal">
-          {question.question}
-        </span>
-        <div className="w-full mdl:hidden">
-          <QuestionSubmitBox questionId={id} />
-        </div>
+      </div>
+      <div className="w-full mdl:hidden">
+        <QuestionSubmitBox questionId={id} />
       </div>
       <div className="w-[300px] hidden mdl:flex justify-center overflow-hidden break-words whitespace-normal flex-col gap-10">
         <span className="text-lg text-slate-700 font-semibold text-center font-pretendard">
