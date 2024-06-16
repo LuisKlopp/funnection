@@ -55,9 +55,9 @@ export const QuestionList = async () => {
       <div className="w-full flex justify-end px-4">
         <Link
           href={"/balance-page"}
-          className=" bg-slate-500 p-4 rounded-lg text-white mb-4"
+          className="bg-slate-500 px-4 py-2 rounded-lg text-white mb-4 text-sm"
         >
-          밸런스 게임으로 이동
+          밸런스 카드로 이동
         </Link>
       </div>
     </div>

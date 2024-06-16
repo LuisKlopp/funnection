@@ -1,8 +1,10 @@
-export interface QuizType {
+export interface BalanceType {
   id: number;
   question: string;
-  yes: number;
-  no: number;
+  leftAnswer: string;
+  rightAnswer: string;
+  leftCount: number;
+  rightCount: number;
   isClicked: boolean;
 }
 
