@@ -3,13 +3,13 @@ import { QuizType } from "@/types/quiz.types";
 import axios from "axios";
 import Link from "next/link";
 
-const fetchQuizzes = async (): Promise<QuizType[]> => {
+const fetchBalanceQuizzes = async (): Promise<QuizType[]> => {
   const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/quiz`);
   return response.data;
 };
 
-const QuizList = async () => {
-  const quizzes = await fetchQuizzes();
+const balanceQuizList = async () => {
+  const quizzes = await fetchBalanceQuizzes();
 
   return (
     <div className="flex flex-col gap-4">
@@ -21,7 +21,7 @@ const QuizList = async () => {
             className={cn("button-base select-box button-active", {
               "clicked-style": quiz.isClicked,
             })}
-            href={`/main-page/${quiz.id}`}
+            href={`/balance-page/${quiz.id}`}
           >
             {quiz.id}
           </Link>
@@ -31,4 +31,4 @@ const QuizList = async () => {
   );
 };
 
-export default QuizList;
+export default balanceQuizList;

@@ -53,7 +53,7 @@ const QuestionList = async () => {
         ))}
       </div>
       <Link
-        href={"/main-page"}
+        href={"/balance-page"}
         className="bg-slate-500 p-4 rounded-lg text-white mb-4"
       >
         밸런스 게임으로 이동

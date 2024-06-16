@@ -4,24 +4,24 @@ import axios from "axios";
 import { MoveLeft } from "lucide-react";
 import Link from "next/link";
 
-type QuizDetailPageProps = {
+type BalanceDetailPageProps = {
   params: { slug: string[] };
 };
 
-const fetchQuizDetail = async (id: string): Promise<QuizType> => {
+const fetchBalanceDetail = async (id: string): Promise<QuizType> => {
   const response = await axios.get(
     `${process.env.NEXT_PUBLIC_BASE_URL}/quiz/${id}`,
   );
   return response.data;
 };
 
-const QuizDetailPage = async ({ params }: QuizDetailPageProps) => {
+const BalanceDetailPage = async ({ params }: BalanceDetailPageProps) => {
   const id = params.slug[0];
-  const quiz = await fetchQuizDetail(id);
+  const quiz = await fetchBalanceDetail(id);
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center gap-10">
-      <Link href={"/main-page"} className="absolute left-10 top-5">
+      <Link href={"/balance-page"} className="absolute left-10 top-5">
         <MoveLeft size={48} />
       </Link>
       <div className="flex justify-center break-words whitespace-normal">
@@ -36,4 +36,4 @@ const QuizDetailPage = async ({ params }: QuizDetailPageProps) => {
   );
 };
 
-export default QuizDetailPage;
+export default BalanceDetailPage;
