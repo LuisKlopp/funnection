@@ -16,7 +16,7 @@ export const BalanceButton = ({
   return (
     <div className="flex flex-col gap-20 items-center">
       <button
-        className="bg-white px-10 py-4 rounded-lg shadow-xl w-[90%] mdl:w-auto cursor-pointer mdl:bg-inherit mdl:shadow-none mdl:cursor-default"
+        className="bg-white px-10 py-4 rounded-lg shadow-xl w-[90%] mdl:w-auto cursor-pointer mdl:bg-inherit mdl:shadow-none mdl:pointer-events-none"
         onClick={onClick}
         disabled={disabled}
       >
