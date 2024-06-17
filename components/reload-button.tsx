@@ -9,7 +9,11 @@ export const ReloadButton = () => {
 
   return (
     <div className="">
-      <Button buttonTitle="결과 확인" onClick={() => router.refresh()} />
+      <Button
+        buttonTitle="결과 확인"
+        onClick={() => router.refresh()}
+        className="font-normal"
+      />
     </div>
   );
 };

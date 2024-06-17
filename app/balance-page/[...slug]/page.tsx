@@ -27,7 +27,7 @@ const BalanceDetailPage = async ({ params }: BalanceDetailPageProps) => {
         <span className="text-4xl text-slate-700 font-semibold text-center break-normal">
           {balance.id}.
         </span>
-        <span className="text-4xl text-slate-700 font-semibold text-center break-keep">
+        <span className="text-4xl text-slate-700 font-normal text-center break-keep">
           {balance.question}
         </span>
       </div>

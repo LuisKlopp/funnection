@@ -26,7 +26,7 @@ const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {
         <MoveLeft size={48} />
       </Link>
       <div className="w-full flex justify-center px-4 gap-4">
-        <span className="text-4xl text-slate-700 font-semibold text-center break-keep">
+        <span className="text-4xl text-slate-700 font-medium text-center break-keep">
           {question.id}. {question.question}
         </span>
       </div>

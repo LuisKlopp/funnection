@@ -43,7 +43,7 @@ export const QuestionSubmitBox = ({ questionId }: QuestionSubmitBoxProps) => {
       <Button
         buttonTitle="답변 제출"
         onClick={handleSubmit}
-        className="font-pretendard"
+        className="font-normal"
         disabled={answerText === ""}
       />
       {isSubmitted && (
