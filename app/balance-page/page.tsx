@@ -1,4 +1,4 @@
-import { BalanceList } from "@/components/balance-list";
+import { BalanceList } from "@/components/balance/balance-list";
 
 export default function BalancePage() {
   return (

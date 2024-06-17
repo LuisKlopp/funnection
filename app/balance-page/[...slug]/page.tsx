@@ -1,4 +1,4 @@
-import { BalanceCounter } from "@/components/balance-counter";
+import { BalanceCounter } from "@/components/balance/balance-counter";
 import { BalanceType } from "@/types/quiz.types";
 import axios from "axios";
 import Link from "next/link";

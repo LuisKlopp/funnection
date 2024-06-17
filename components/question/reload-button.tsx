@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-import { Button } from "./button";
+import { Button } from "../button";
 
 export const ReloadButton = () => {
   const router = useRouter();

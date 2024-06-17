@@ -1,5 +1,5 @@
-import { QuestionSubmitBox } from "@/components/question-submit-box";
-import { ReloadButton } from "@/components/reload-button";
+import { QuestionSubmitBox } from "@/components/question/question-submit-box";
+import { ReloadButton } from "@/components/question/reload-button";
 import { QuestionType } from "@/types/question.types";
 import axios from "axios";
 import { MoveLeft } from "lucide-react";

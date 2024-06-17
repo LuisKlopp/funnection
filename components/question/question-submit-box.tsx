@@ -2,8 +2,8 @@
 
 import { ChangeEvent, useState } from "react";
 
-import { Button } from "./button";
-import { Input } from "./input";
+import { Button } from "../button";
+import { Input } from "../input";
 
 interface QuestionSubmitBoxProps {
   questionId: string;

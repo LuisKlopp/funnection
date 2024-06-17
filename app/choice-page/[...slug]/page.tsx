@@ -1,4 +1,4 @@
-import { ChoiceCounter } from "@/components/choice-counter";
+import { ChoiceCounter } from "@/components/choice/choice-counter";
 import { ChoiceType } from "@/types/quiz.types";
 import axios from "axios";
 import Link from "next/link";

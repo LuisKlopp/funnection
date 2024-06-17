@@ -1,4 +1,4 @@
-import { ChoiceList } from "@/components/choice-list";
+import { ChoiceList } from "@/components/choice/choice-list";
 
 export default function ChoicePage() {
   return (
