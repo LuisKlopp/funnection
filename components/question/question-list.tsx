@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils";
 import CardSelect from "@/public/card-select.svg";
 import { QuestionType } from "@/types/question.types";
-import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 
 const fetchQuestions = async (): Promise<QuestionType[]> => {
-  const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/question`,
-  );
-  return response.data;
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/question`, {
+    cache: "no-store",
+  });
+  const data = response.json();
+  return data;
 };
 
 export const QuestionList = async () => {
