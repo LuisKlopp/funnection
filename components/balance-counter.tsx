@@ -31,6 +31,7 @@ export const BalanceCounter = ({
 }: BalanceCounterProps) => {
   const [leftCount, setLeftCount] = useState(initialLeft);
   const [rightCount, setRightCount] = useState(initialRight);
+  const [clicked, setClicked] = useState<string | null>(null);
 
   const updateResults = async () => {
     const results = await fetchBalanceDetail(id);
@@ -44,6 +45,7 @@ export const BalanceCounter = ({
         `${process.env.NEXT_PUBLIC_BASE_URL}/balance/${id}/increment-left`,
       );
       setLeftCount(response.data.leftCount);
+      setClicked("left");
     } catch (error) {
       console.error("Failed to increment yes", error);
     }
@@ -55,6 +57,7 @@ export const BalanceCounter = ({
         `${process.env.NEXT_PUBLIC_BASE_URL}/balance/${id}/increment-right`,
       );
       setRightCount(response.data.rightCount);
+      setClicked("right");
     } catch (error) {
       console.error("Failed to increment no", error);
     }
@@ -63,18 +66,24 @@ export const BalanceCounter = ({
   return (
     <div className="flex gap-20 flex-col justify-center items-center w-full">
       <div className="flex flex-col mdl:flex-row gap-10 mdl:gap-40 w-full justify-center">
-        <BalanceButton
-          onClick={incrementLeft}
-          answer={leftAnswer}
-          counter={leftCount}
-          className="text-2xl text-blue-700"
-        />
-        <BalanceButton
-          onClick={incrementRight}
-          answer={rightAnswer}
-          counter={rightCount}
-          className="text-2xl text-red-700"
-        />
+        {!clicked || clicked === "left" ? (
+          <BalanceButton
+            onClick={incrementLeft}
+            answer={leftAnswer}
+            counter={leftCount}
+            className="text-2xl text-blue-700"
+            disabled={!!clicked}
+          />
+        ) : null}
+        {!clicked || clicked === "right" ? (
+          <BalanceButton
+            onClick={incrementRight}
+            answer={rightAnswer}
+            counter={rightCount}
+            className="text-2xl text-red-700"
+            disabled={!!clicked}
+          />
+        ) : null}
       </div>
       <div className="hidden mdl:block">
         <button
