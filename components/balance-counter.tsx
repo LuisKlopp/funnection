@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import { BalanceType } from "@/types/quiz.types";
 import axios from "axios";
 
+import { BalanceButton } from "./balance-button";
+
 type BalanceCounterProps = {
   id: string;
   initialLeft: number;
@@ -61,36 +63,18 @@ export const BalanceCounter = ({
   return (
     <div className="flex gap-20 flex-col justify-center items-center w-full">
       <div className="flex flex-col mdl:flex-row gap-10 mdl:gap-40 w-full justify-center">
-        <div className="flex flex-col gap-20 items-center">
-          <div className="bg-white px-10 py-4 rounded-lg shadow-xl w-[90%] mdl:w-auto">
-            <span
-              className="text-2xl text-blue-700 cursor-pointer"
-              onClick={incrementLeft}
-            >
-              {leftAnswer}
-            </span>
-          </div>
-          <div className="hidden mdl:block">
-            <span className="text-5xl text-slate-700 font-bold">
-              {leftCount}
-            </span>
-          </div>
-        </div>
-        <div className="flex flex-col gap-20 items-center">
-          <div className="bg-white px-10 py-4 rounded-lg shadow-xl w-[90%] mdl:w-auto">
-            <span
-              className="text-2xl text-red-700 cursor-pointer"
-              onClick={incrementRight}
-            >
-              {rightAnswer}
-            </span>
-          </div>
-          <div className="hidden mdl:block">
-            <span className="text-5xl text-slate-700 font-bold">
-              {rightCount}
-            </span>
-          </div>
-        </div>
+        <BalanceButton
+          onClick={incrementLeft}
+          answer={leftAnswer}
+          counter={leftCount}
+          className="text-2xl text-blue-700"
+        />
+        <BalanceButton
+          onClick={incrementRight}
+          answer={rightAnswer}
+          counter={rightCount}
+          className="text-2xl text-red-700"
+        />
       </div>
       <div className="hidden mdl:block">
         <button

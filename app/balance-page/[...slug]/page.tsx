@@ -1,7 +1,6 @@
 import { BalanceCounter } from "@/components/balance-counter";
 import { BalanceType } from "@/types/quiz.types";
 import axios from "axios";
-import { MoveLeft } from "lucide-react";
 import Link from "next/link";
 
 type BalanceDetailPageProps = {
@@ -21,8 +20,8 @@ const BalanceDetailPage = async ({ params }: BalanceDetailPageProps) => {
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center gap-10">
-      <Link href={"/balance-page"} className="absolute left-10 top-5">
-        <MoveLeft size={48} />
+      <Link href={"/balance-page"} className="absolute left-5 top-5">
+        뒤로가기
       </Link>
       <div className="flex justify-center break-words whitespace-normal px-4 gap-4">
         <span className="text-4xl text-slate-700 font-semibold text-center break-normal">
