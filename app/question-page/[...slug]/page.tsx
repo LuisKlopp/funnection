@@ -33,14 +33,18 @@ const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {
       <div className="w-full mdl:hidden">
         <QuestionSubmitBox questionId={id} />
       </div>
-      <div className="w-[300px] hidden mdl:flex justify-center overflow-hidden break-words whitespace-normal flex-col gap-10">
-        <span className="text-lg text-slate-700 font-semibold text-center font-pretendard">
-          {question.answers.map((answer) => (
-            <div key={answer.id} className="fade-in-up">
-              {answer.answer}
+      <div className="w-[500px] hidden mdl:flex flex-col gap-10 items-center">
+        <div className="w-full flex flex-col gap-2">
+          {question.answers.map((answer, index) => (
+            <div
+              key={answer.id}
+              className="fade-in-up text-lg text-slate-700 font-semibold font-pretendard"
+            >
+              <span className="text-slate-500">{index + 1}. </span>
+              <span className="text-gray-700">{answer.answer}</span>
             </div>
           ))}
-        </span>
+        </div>
         <ReloadButton />
       </div>
     </div>

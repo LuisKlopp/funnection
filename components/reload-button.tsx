@@ -8,7 +8,7 @@ export const ReloadButton = () => {
   const router = useRouter();
 
   return (
-    <div className="">
+    <div className="w-[300px]">
       <Button
         buttonTitle="결과 확인"
         onClick={() => router.refresh()}
