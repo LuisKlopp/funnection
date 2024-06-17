@@ -12,3 +12,11 @@ export interface ResultsType {
   O: number;
   X: number;
 }
+
+export interface ChoiceType {
+  id: number;
+  question: string;
+  yesCount: number;
+  noCount: number;
+  isClicked: boolean;
+}
