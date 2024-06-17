@@ -19,14 +19,14 @@ export const ChoiceList = async () => {
     <div className="flex flex-col gap-4 items-center h-full">
       <Link href="/balance-page">뒤로가기</Link>
       <h1 className="text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
-        밸런스 카드
+        OX 카드
       </h1>
-      <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 md:border-none">
+      <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 mdl:border-none border-x-0">
         {choiceList.map((choice) => (
           <Link
             key={choice.id}
             className={cn("button-base mobile-select-box-white button-active", {
-              "mobile-select-box-black": choice.isClicked,
+              "mobile-select-box-purple": choice.isClicked,
             })}
             href={`/choice-page/${choice.id}`}
           >

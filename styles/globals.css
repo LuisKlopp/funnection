@@ -89,18 +89,18 @@ body,
 }
 
 .mobile-select-box-black {
-  background-color: #475569;
-  border: 2px solid #64748b;
-  font-size: 30px;
-  text-decoration: none;
-  color: white;
-  border-radius: 4px;
-  padding: 8px;
-  width: 73px;
-  height: 125px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  background-color: #6d7a8d;
+}
+
+.mobile-select-box-red {
+  border: none;
+  background-color: #d06c6c;
+}
+
+.mobile-select-box-purple {
+  border: none;
+  background-color: #aa79bb;
 }
 
 @keyframes fadeInUp {

@@ -67,7 +67,7 @@ export const ChoiceCounter = ({
             onClick={incrementYes}
             choiceType="O"
             count={yesCount}
-            className="text-9xl text-blue-700"
+            className="text-4xl mdl:text-9xl text-blue-700"
             disabled={!!clicked}
           />
         ) : null}
@@ -76,7 +76,7 @@ export const ChoiceCounter = ({
             onClick={incrementNo}
             choiceType="X"
             count={noCount}
-            className="text-9xl text-red-700"
+            className="text-4xl mdl:text-9xl text-red-700"
             disabled={!!clicked}
           />
         ) : null}
