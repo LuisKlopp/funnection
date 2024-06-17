@@ -1,6 +1,5 @@
 import { ChoiceCounter } from "@/components/choice/choice-counter";
 import { ChoiceType } from "@/types/quiz.types";
-import axios from "axios";
 import Link from "next/link";
 
 type ChoiceDetailPageProps = {
@@ -8,10 +7,14 @@ type ChoiceDetailPageProps = {
 };
 
 const fetchChoiceDetail = async (id: string): Promise<ChoiceType> => {
-  const response = await axios.get(
+  const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/choice/${id}`,
+    {
+      cache: "no-store",
+    },
   );
-  return response.data;
+  const data = response.json();
+  return data;
 };
 
 const ChoiceDetailPage = async ({ params }: ChoiceDetailPageProps) => {

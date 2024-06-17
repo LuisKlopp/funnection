@@ -1,6 +1,5 @@
 import { BalanceCounter } from "@/components/balance/balance-counter";
 import { BalanceType } from "@/types/quiz.types";
-import axios from "axios";
 import Link from "next/link";
 
 type BalanceDetailPageProps = {
@@ -8,10 +7,14 @@ type BalanceDetailPageProps = {
 };
 
 const fetchBalanceDetail = async (id: string): Promise<BalanceType> => {
-  const response = await axios.get(
+  const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/balance/${id}`,
+    {
+      cache: "no-store",
+    },
   );
-  return response.data;
+  const data = response.json();
+  return data;
 };
 
 const BalanceDetailPage = async ({ params }: BalanceDetailPageProps) => {

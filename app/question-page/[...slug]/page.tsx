@@ -1,7 +1,6 @@
 import { QuestionSubmitBox } from "@/components/question/question-submit-box";
 import { ReloadButton } from "@/components/question/reload-button";
 import { QuestionType } from "@/types/question.types";
-import axios from "axios";
 import { MoveLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -10,10 +9,14 @@ type QuestionDetailPageProps = {
 };
 
 const fetchQuestionDetail = async (id: string): Promise<QuestionType> => {
-  const response = await axios.get(
+  const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/question/${id}`,
+    {
+      cache: "no-store",
+    },
   );
-  return response.data;
+  const data = response.json();
+  return data;
 };
 
 const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {

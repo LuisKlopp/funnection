@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils";
 import CardSelect from "@/public/card-select.svg";
 import { BalanceType } from "@/types/quiz.types";
-import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 
 const fetchBalanceList = async (): Promise<BalanceType[]> => {
-  const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/balance`,
-  );
-  return response.data;
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/balance`, {
+    cache: "no-store",
+  });
+  const data = response.json();
+  return data;
 };
 
 export const BalanceList = async () => {
