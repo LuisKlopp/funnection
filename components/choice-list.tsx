@@ -17,9 +17,11 @@ export const ChoiceList = async () => {
 
   return (
     <div className="flex flex-col gap-4 items-center h-full">
-      <Link href="/balance-page">뒤로가기</Link>
-      <h1 className="text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
-        OX 카드
+      <Link href="/balance-page" className="absolute left-5 top-5">
+        뒤로가기
+      </Link>
+      <h1 className="text-2xl mdl:text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
+        Funnection OX
       </h1>
       <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 mdl:border-none border-x-0">
         {choiceList.map((choice) => (
