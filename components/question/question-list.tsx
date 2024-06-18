@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 import { cn } from "@/lib/utils";
 import CardSelect from "@/public/card-select.svg";
 import { QuestionType } from "@/types/question.types";
