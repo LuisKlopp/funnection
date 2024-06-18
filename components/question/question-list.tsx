@@ -1,19 +1,27 @@
+"use client";
+
+import { useState } from "react";
+
 import { cn } from "@/lib/utils";
 import CardSelect from "@/public/card-select.svg";
 import { QuestionType } from "@/types/question.types";
 import Image from "next/image";
 import Link from "next/link";
 
-const fetchQuestions = async (): Promise<QuestionType[]> => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/question`, {
-    cache: "no-store",
-  });
-  const data = response.json();
-  return data;
+type Props = {
+  questions: QuestionType[];
 };
 
-export const QuestionList = async () => {
-  const questions = await fetchQuestions();
+export const QuestionList = ({ questions }: Props) => {
+  const [questionList, setQuestionList] = useState<QuestionType[]>(questions);
+
+  const handleQuestionClick = (id: number) => {
+    setQuestionList((prevQuestions) =>
+      prevQuestions.map((question) =>
+        question.id === id ? { ...question, isClicked: true } : question,
+      ),
+    );
+  };
 
   return (
     <div className="flex flex-col gap-4 items-center h-full">
@@ -21,13 +29,14 @@ export const QuestionList = async () => {
         Funnection Question
       </h1>
       <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 md:border-none border-x-0">
-        {questions.map((question) => (
+        {questionList.map((question) => (
           <Link
             key={question.id}
             className={cn("button-base mobile-select-box-white button-active", {
               "mobile-select-box-black": question.isClicked,
             })}
             href={`/question-page/${question.id}`}
+            onClick={() => handleQuestionClick(question.id)}
           >
             <div className="relative w-full h-full">
               <Image
