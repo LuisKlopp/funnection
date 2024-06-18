@@ -1,9 +1,7 @@
 import { QuestionType } from "@/types/question.types";
 
 export const fetchQuestions = async (): Promise<QuestionType[]> => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/question`, {
-    cache: "no-store",
-  });
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/question`);
   if (!response.ok) {
     throw new Error("Failed to fetch");
   }

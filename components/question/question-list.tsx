@@ -10,7 +10,7 @@ import Link from "next/link";
 import useSWR from "swr";
 
 const fetcher = async (url: string) => {
-  const response = await fetch(url, { cache: "no-store" });
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error("Failed to fetch");
   }
@@ -30,8 +30,8 @@ export const QuestionList = ({ initialQuestions }: Props) => {
 
   const handleQuestionClick = async (id: number) => {
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/question/${id}/click`, {
-        method: "POST",
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/question/${id}`, {
+        method: "GET",
       });
       mutate();
     } catch (err) {
