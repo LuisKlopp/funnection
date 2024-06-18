@@ -7,20 +7,36 @@ import CardSelect from "@/public/card-select.svg";
 import { QuestionType } from "@/types/question.types";
 import Image from "next/image";
 import Link from "next/link";
+import useSWR from "swr";
 
-type Props = {
-  questions: QuestionType[];
+const fetcher = async (url: string) => {
+  const response = await fetch(url, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error("Failed to fetch");
+  }
+  return response.json();
 };
 
-export const QuestionList = ({ questions }: Props) => {
-  const [questionList, setQuestionList] = useState<QuestionType[]>(questions);
+type Props = {
+  initialQuestions: QuestionType[];
+};
 
-  const handleQuestionClick = (id: number) => {
-    setQuestionList((prevQuestions) =>
-      prevQuestions.map((question) =>
-        question.id === id ? { ...question, isClicked: true } : question,
-      ),
-    );
+export const QuestionList = ({ initialQuestions }: Props) => {
+  const { data: questions, mutate } = useSWR<QuestionType[]>(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/question`,
+    fetcher,
+    { fallbackData: initialQuestions },
+  );
+
+  const handleQuestionClick = async (id: number) => {
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/question/${id}/click`, {
+        method: "POST",
+      });
+      mutate();
+    } catch (err) {
+      console.error("Failed to update question click status", err);
+    }
   };
 
   return (
@@ -29,7 +45,7 @@ export const QuestionList = ({ questions }: Props) => {
         Funnection Question
       </h1>
       <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 md:border-none border-x-0">
-        {questionList.map((question) => (
+        {questions?.map((question) => (
           <Link
             key={question.id}
             className={cn("button-base mobile-select-box-white button-active", {
