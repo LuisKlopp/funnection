@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import CardSelect from "@/public/card-select.svg";
 import { ChoiceType } from "@/types/quiz.types";
