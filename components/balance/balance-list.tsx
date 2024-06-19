@@ -17,9 +17,6 @@ export const BalanceList = async () => {
 
   return (
     <div className="flex flex-col gap-4 items-center h-full">
-      <Link href="/question-page" className="absolute left-5 top-5">
-        뒤로가기
-      </Link>
       <h1 className="text-2xl mdl:text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
         Funnection Balance
       </h1>
@@ -55,7 +52,13 @@ export const BalanceList = async () => {
           </Link>
         ))}
       </div>
-      <div className="w-full flex justify-end px-4">
+      <div className="w-full flex justify-between px-4">
+        <Link
+          href="/question-page"
+          className="mb-4 button-base button-active custom-button !bg-white !text-slate-500"
+        >
+          단답 카드로 이동
+        </Link>
         <Link
           href={"/choice-page"}
           className="mb-4 button-base button-active custom-button !bg-white !text-slate-500"

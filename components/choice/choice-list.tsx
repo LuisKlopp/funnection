@@ -17,9 +17,6 @@ export const ChoiceList = async () => {
 
   return (
     <div className="flex flex-col gap-4 items-center h-full">
-      <Link href="/balance-page" className="absolute left-5 top-5">
-        뒤로가기
-      </Link>
       <h1 className="text-2xl mdl:text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
         Funnection OX
       </h1>
@@ -55,7 +52,7 @@ export const ChoiceList = async () => {
           </Link>
         ))}
       </div>
-      <div className="w-full flex justify-end px-4">
+      <div className="w-full flex justify-between px-4">
         <Link
           href={"/balance-page"}
           className="mb-4 button-base button-active custom-button !bg-white !text-slate-500"
