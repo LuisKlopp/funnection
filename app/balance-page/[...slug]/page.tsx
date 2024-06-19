@@ -1,25 +1,14 @@
+import { fetchBalance } from "@/api/fetchBalanceList";
 import { BalanceCounter } from "@/components/balance/balance-counter";
-import { BalanceType } from "@/types/quiz.types";
 import Link from "next/link";
 
 type BalanceDetailPageProps = {
   params: { slug: string[] };
 };
 
-const fetchBalanceDetail = async (id: string): Promise<BalanceType> => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/balance/${id}`,
-    {
-      cache: "no-store",
-    },
-  );
-  const data = response.json();
-  return data;
-};
-
 const BalanceDetailPage = async ({ params }: BalanceDetailPageProps) => {
   const id = params.slug[0];
-  const balance = await fetchBalanceDetail(id);
+  const balance = await fetchBalance(id);
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center gap-10">

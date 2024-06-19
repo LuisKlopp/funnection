@@ -1,25 +1,14 @@
+import { fetchChoice } from "@/api/fetchChoiceList";
 import { ChoiceCounter } from "@/components/choice/choice-counter";
-import { ChoiceType } from "@/types/quiz.types";
 import Link from "next/link";
 
 type ChoiceDetailPageProps = {
   params: { slug: string[] };
 };
 
-const fetchChoiceDetail = async (id: string): Promise<ChoiceType> => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/choice/${id}`,
-    {
-      cache: "no-store",
-    },
-  );
-  const data = response.json();
-  return data;
-};
-
 const ChoiceDetailPage = async ({ params }: ChoiceDetailPageProps) => {
   const id = params.slug[0];
-  const choice = await fetchChoiceDetail(id);
+  const choice = await fetchChoice(id);
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center gap-10">

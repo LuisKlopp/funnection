@@ -1,56 +1,27 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import CardSelect from "@/public/card-select.svg";
 import { QuestionType } from "@/types/question.types";
 import Image from "next/image";
 import Link from "next/link";
-import useSWR from "swr";
-
-const fetcher = async (url: string) => {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Failed to fetch");
-  }
-  return response.json();
-};
 
 type Props = {
   initialQuestions: QuestionType[];
 };
 
 export const QuestionList = ({ initialQuestions }: Props) => {
-  const { data: questions, mutate } = useSWR<QuestionType[]>(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/question`,
-    fetcher,
-    { fallbackData: initialQuestions },
-  );
-
-  const handleQuestionClick = async (id: number) => {
-    try {
-      await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/question/${id}`, {
-        method: "GET",
-      });
-      mutate();
-    } catch (err) {
-      console.error("Failed to update question click status", err);
-    }
-  };
-
   return (
     <div className="flex flex-col gap-4 items-center h-full">
       <h1 className="text-2xl mdl:text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
         Funnection Question
       </h1>
       <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 md:border-none border-x-0">
-        {questions?.map((question) => (
+        {initialQuestions?.map((question) => (
           <Link
             key={question.id}
             className={cn("button-base mobile-select-box-white button-active", {
               "mobile-select-box-black": question.isClicked,
             })}
             href={`/question-page/${question.id}`}
-            onClick={() => handleQuestionClick(question.id)}
           >
             <div className="relative w-full h-full">
               <Image
