@@ -41,10 +41,12 @@ const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {
           {question.answers.map((answer, index) => (
             <div
               key={answer.id}
-              className="fade-in-up text-lg text-slate-700 font-semibold font-pretendard"
+              className="fade-in-up text-[22px] bg-zinc-200 px-4 py-2 rounded-lg shadow-lg"
             >
               <span className="text-slate-500">{index + 1}. </span>
-              <span className="text-gray-700">{answer.answer}</span>
+              <span className="text-slate-600 font-semibold">
+                {answer.answer}
+              </span>
             </div>
           ))}
         </div>
