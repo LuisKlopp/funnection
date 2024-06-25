@@ -1,8 +1,8 @@
 import { ChoiceList } from "@/components/choice/choice-list";
 
-export default function ChoicePage() {
+export default async function ChoicePage() {
   return (
-    <div className="h-[100dvh] flex flex-col justify-center items-center gap-4">
+    <div className="flex h-[100dvh] flex-col items-center justify-center gap-4">
       <ChoiceList />
     </div>
   );

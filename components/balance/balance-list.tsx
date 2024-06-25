@@ -8,20 +8,24 @@ export const BalanceList = async () => {
   const balanceList = await fetchBalanceList();
 
   return (
-    <div className="flex flex-col gap-4 items-center h-full">
-      <h1 className="text-2xl mdl:text-4xl font-medium text-slate-700 md:pt-32 md:pb-10 pt-5">
-        Funnection Balance
+    <div className="flex h-full flex-col items-center gap-4">
+      <h1 className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl">
+        Funnection 밸런스 질문
       </h1>
-      <div className="flex gap-5 md:gap-10 flex-wrap p-4 overflow-y-scroll justify-center border-4 border-t-slate-500 border-b-slate-500 md:border-none border-x-0">
+      <div className="flex flex-wrap justify-center gap-5 overflow-y-scroll border-4 border-x-0 border-b-slate-500 border-t-slate-500 p-4 md:gap-10 md:border-none">
         {balanceList.map((balance) => (
           <Link
             key={balance.id}
-            className={cn("button-base mobile-select-box-white button-active", {
-              "mobile-select-box-red": balance.isClicked,
-            })}
+            className={cn(
+              "button-base mobile-select-box-white button-active",
+              {
+                "mobile-select-box-red":
+                  balance.isClicked,
+              },
+            )}
             href={`/balance-page/${balance.id}`}
           >
-            <div className="relative w-full h-full">
+            <div className="relative h-full w-full">
               <Image
                 src={CardSelect}
                 alt="card-select"
@@ -31,7 +35,7 @@ export const BalanceList = async () => {
               />
               <div
                 className={cn(
-                  "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#3c4859]",
+                  "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-[#3c4859]",
                   {
                     "text-white drop-shadow-[0_5px_5px_rgba(0,0,0,1)]":
                       balance.isClicked,
@@ -44,16 +48,16 @@ export const BalanceList = async () => {
           </Link>
         ))}
       </div>
-      <div className="w-full flex justify-between px-4">
+      <div className="flex w-full justify-between px-4">
         <Link
           href="/question-page"
-          className="mb-4 button-base button-active custom-button !bg-white !text-slate-500"
+          className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
         >
           단답 카드로 이동
         </Link>
         <Link
           href={"/choice-page"}
-          className="mb-4 button-base button-active custom-button !bg-white !text-slate-500"
+          className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
         >
           OX 카드로 이동
         </Link>
