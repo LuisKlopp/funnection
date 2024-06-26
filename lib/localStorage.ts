@@ -13,6 +13,13 @@ export const saveQuestions = (questions: QuestionType[]) => {
   }
 };
 
+export const deleteQuestions = () => {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("questions");
+    localStorage.removeItem("clickedQuestions");
+  }
+};
+
 export const getClickedQuestions = () => {
   if (typeof window !== "undefined") {
     const data = localStorage.getItem("clickedQuestions");

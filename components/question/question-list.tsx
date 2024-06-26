@@ -12,6 +12,7 @@ import {
   saveQuestions,
   getClickedQuestions,
   saveClickedQuestion,
+  deleteQuestions,
 } from "@/lib/localStorage";
 
 export const QuestionList = () => {
@@ -42,7 +43,10 @@ export const QuestionList = () => {
 
   return (
     <div className="flex h-full flex-col items-center gap-4">
-      <h1 className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl">
+      <h1
+        onClick={deleteQuestions}
+        className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl"
+      >
         Funnection 단답 질문
       </h1>
       <div className="flex flex-wrap justify-center gap-5 overflow-y-scroll border-4 border-x-0 border-b-slate-500 border-t-slate-500 p-4 md:gap-10 md:border-none">
