@@ -14,12 +14,16 @@ const fetcher = async () => {
 };
 
 export const QuestionList = () => {
-  const { data: questions, error } = useSWR<
-    QuestionType[]
-  >("/api/questions", fetcher);
+  const { data: questions, error } = useSWR<QuestionType[]>(
+    "/api/questions",
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      refreshInterval: 0,
+    },
+  );
 
-  if (error)
-    return <div>Failed to load questions</div>;
+  if (error) return <div>Failed to load questions</div>;
   if (!questions) return <div>Loading...</div>;
 
   return (
@@ -34,8 +38,7 @@ export const QuestionList = () => {
             className={cn(
               "button-base mobile-select-box-white button-active",
               {
-                "mobile-select-box-black":
-                  question.isClicked,
+                "mobile-select-box-black": question.isClicked,
               },
             )}
             href={`/question-page/${question.id}`}

@@ -60,14 +60,14 @@ export const ChoiceCounter = ({
   };
 
   return (
-    <div className="flex gap-20 flex-col justify-center items-center w-full">
-      <div className="flex flex-col mdl:flex-row gap-10 mdl:gap-40 w-full justify-center">
+    <div className="flex w-full flex-col items-center justify-center gap-20">
+      <div className="flex w-full flex-col justify-center gap-10 mdl:flex-row mdl:gap-40">
         {!clicked || clicked === "yes" ? (
           <ChoiceButton
             onClick={incrementYes}
             choiceType="O"
             count={yesCount}
-            className="text-4xl mdl:text-9xl text-blue-700"
+            className="text-4xl text-blue-700 mdl:text-9xl"
             disabled={!!clicked}
           />
         ) : null}
@@ -76,7 +76,7 @@ export const ChoiceCounter = ({
             onClick={incrementNo}
             choiceType="X"
             count={noCount}
-            className="text-4xl mdl:text-9xl text-red-700"
+            className="text-4xl text-red-700 mdl:text-9xl"
             disabled={!!clicked}
           />
         ) : null}

@@ -19,8 +19,7 @@ export const ChoiceList = async () => {
             className={cn(
               "button-base mobile-select-box-white button-active",
               {
-                "mobile-select-box-purple":
-                  choice.isClicked,
+                "mobile-select-box-purple": choice.isClicked,
               },
             )}
             href={`/choice-page/${choice.id}`}
