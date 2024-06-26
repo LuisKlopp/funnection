@@ -24,12 +24,13 @@ export const QuestionList = () => {
     const localQuestions = getQuestions();
     if (localQuestions) {
       setQuestions(localQuestions);
-    } else {
-      fetchQuestionList().then((data) => {
-        setQuestions(data);
-        saveQuestions(data);
-      });
+      return;
     }
+
+    fetchQuestionList().then((data) => {
+      setQuestions(data);
+      saveQuestions(data);
+    });
   }, []);
 
   const handleQuestionClick = (id: number) => {
