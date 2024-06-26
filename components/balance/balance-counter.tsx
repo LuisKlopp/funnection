@@ -15,7 +15,9 @@ type BalanceCounterProps = {
   rightAnswer: string;
 };
 
-const fetchBalanceDetail = async (id: string): Promise<BalanceType> => {
+const fetchBalanceDetail = async (
+  id: string,
+): Promise<BalanceType> => {
   const response = await axios.get(
     `${process.env.NEXT_PUBLIC_BASE_URL}/balance/${id}`,
   );
@@ -64,27 +66,29 @@ export const BalanceCounter = ({
   };
 
   return (
-    <div className="flex gap-20 flex-col justify-center items-center w-full">
-      <div className="flex flex-col mdl:flex-row gap-10 mdl:gap-40 w-full justify-center">
-        {!clicked || clicked === "left" ? (
-          <BalanceButton
-            onClick={incrementLeft}
-            answer={leftAnswer}
-            counter={leftCount}
-            className="text-3xl text-blue-700"
-            disabled={!!clicked}
-          />
-        ) : null}
-        {!clicked || clicked === "right" ? (
-          <BalanceButton
-            onClick={incrementRight}
-            answer={rightAnswer}
-            counter={rightCount}
-            className="text-3xl text-red-700"
-            disabled={!!clicked}
-          />
-        ) : null}
+    <div className="flex w-full flex-col items-center justify-center gap-20">
+      <div className="flex w-full flex-col justify-center gap-10 mdl:flex-row mdl:gap-40">
+        <BalanceButton
+          onClick={incrementLeft}
+          answer={leftAnswer}
+          counter={leftCount}
+          className="text-3xl text-blue-700"
+          disabled={!!clicked}
+        />
+
+        <BalanceButton
+          onClick={incrementRight}
+          answer={rightAnswer}
+          counter={rightCount}
+          className="text-3xl text-red-700"
+          disabled={!!clicked}
+        />
       </div>
+      {!!clicked && (
+        <div className="flex w-full justify-center mdl:hidden">
+          <span>답변이 제출되었습니다!</span>
+        </div>
+      )}
       <div className="hidden mdl:block">
         <button
           onClick={updateResults}
