@@ -29,8 +29,6 @@ export const ChoiceCounter = ({
   const [noCount, setNoCount] = useState(initialRight);
   const [clicked, setClicked] = useState<string | null>(null);
 
-  console.log(yesCount);
-
   const updateResults = async () => {
     const results = await fetchChoiceDetail(id);
     setYesCount(results.yesCount);
