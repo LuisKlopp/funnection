@@ -13,7 +13,7 @@ import {
   getClickedQuestions,
   saveClickedQuestion,
   deleteQuestions,
-} from "@/lib/localStorage";
+} from "@/lib/questionLocalStorage";
 
 export const QuestionList = () => {
   const [questions, setQuestions] = useState<QuestionType[]>([]);
