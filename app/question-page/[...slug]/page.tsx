@@ -8,7 +8,9 @@ type QuestionDetailPageProps = {
   params: { slug: string[] };
 };
 
-const fetchQuestionDetail = async (id: string): Promise<QuestionType> => {
+const fetchQuestionDetail = async (
+  id: string,
+): Promise<QuestionType> => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/question/${id}`,
     {
@@ -19,32 +21,37 @@ const fetchQuestionDetail = async (id: string): Promise<QuestionType> => {
   return data;
 };
 
-const QuestionDetailPage = async ({ params }: QuestionDetailPageProps) => {
+const QuestionDetailPage = async ({
+  params,
+}: QuestionDetailPageProps) => {
   const id = params.slug[0];
   const question = await fetchQuestionDetail(id);
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center gap-10">
-      <Link href={"/question-page"} className="absolute left-10 top-5">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-10">
+      <Link
+        href={"/question-page"}
+        className="absolute left-10 top-5"
+      >
         <MoveLeft size={48} />
       </Link>
-      <div className="w-full flex justify-center px-4 gap-4">
-        <span className="text-4xl text-slate-700 font-medium text-center break-keep">
+      <div className="flex w-full justify-center gap-4 px-4">
+        <span className="break-keep text-center text-3xl font-medium text-slate-700 mdl:text-4xl">
           {question.id}. {question.question}
         </span>
       </div>
       <div className="w-full mdl:hidden">
         <QuestionSubmitBox questionId={id} />
       </div>
-      <div className="w-[500px] hidden mdl:flex flex-col gap-10 items-center">
-        <div className="w-full flex flex-col gap-2">
+      <div className="hidden w-[500px] flex-col items-center gap-10 mdl:flex">
+        <div className="flex w-full flex-col gap-2">
           {question.answers.map((answer, index) => (
             <div
               key={answer.id}
-              className="fade-in-up text-[22px] bg-zinc-200 px-4 py-2 rounded-lg shadow-lg"
+              className="fade-in-up rounded-lg bg-zinc-200 px-4 py-2 text-[22px] shadow-lg"
             >
               <span className="text-slate-500">{index + 1}. </span>
-              <span className="text-slate-600 font-semibold">
+              <span className="font-semibold text-slate-600">
                 {answer.answer}
               </span>
             </div>
