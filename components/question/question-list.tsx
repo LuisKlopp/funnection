@@ -21,6 +21,11 @@ export const QuestionList = () => {
     getClickedQuestions(),
   );
 
+  const handleQuestionClick = (id: number) => {
+    saveClickedQuestion(id);
+    setClickedQuestions([...clickedQuestions, id]);
+  };
+
   useEffect(() => {
     const localQuestions = getQuestions();
     if (localQuestions) {
@@ -33,11 +38,6 @@ export const QuestionList = () => {
       saveQuestions(data);
     });
   }, []);
-
-  const handleQuestionClick = (id: number) => {
-    saveClickedQuestion(id);
-    setClickedQuestions([...clickedQuestions, id]);
-  };
 
   if (!questions.length) return <div>Loading...</div>;
 
