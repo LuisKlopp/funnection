@@ -90,9 +90,15 @@ export const QuestionList = () => {
           </Link>
         ))}
       </div>
-      <div className="flex w-full justify-end px-4">
+      <div className="flex w-full justify-between px-4">
         <Link
-          href="/balance-page"
+          href="/choice-page"
+          className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
+        >
+          OX 카드로 이동
+        </Link>
+        <Link
+          href={"/balance-page"}
           className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
         >
           밸런스 카드로 이동

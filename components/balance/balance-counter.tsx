@@ -72,7 +72,7 @@ export const BalanceCounter = ({
           onClick={incrementLeft}
           answer={leftAnswer}
           counter={leftCount}
-          className="text-2xl text-[#5252de] mdl:text-3xl"
+          className="break-keep text-2xl text-[#5252de] mdl:text-3xl"
           disabled={!!clicked}
         />
 
@@ -80,7 +80,7 @@ export const BalanceCounter = ({
           onClick={incrementRight}
           answer={rightAnswer}
           counter={rightCount}
-          className="text-2xl text-[#18b662] mdl:text-3xl"
+          className="break-keep text-2xl text-[#18b662] mdl:text-3xl"
           disabled={!!clicked}
         />
       </div>

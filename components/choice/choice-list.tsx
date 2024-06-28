@@ -92,12 +92,12 @@ export const ChoiceList = () => {
           </Link>
         ))}
       </div>
-      <div className="flex w-full justify-between px-4">
+      <div className="flex w-full justify-end px-4">
         <Link
-          href={"/balance-page"}
+          href={"/question-page"}
           className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
         >
-          밸런스 카드로 이동
+          단답 카드로 이동
         </Link>
       </div>
     </div>
