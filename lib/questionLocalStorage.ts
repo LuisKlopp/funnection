@@ -21,6 +21,7 @@ export const deleteQuestions = () => {
   if (typeof window !== "undefined") {
     localStorage.removeItem("questions");
     localStorage.removeItem("clickedQuestions");
+    window.location.reload();
   }
 };
 

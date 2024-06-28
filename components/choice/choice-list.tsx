@@ -14,6 +14,7 @@ import {
 } from "@/lib/choiceLocalStorage";
 import { useEffect, useState } from "react";
 import { ChoiceType } from "@/types/quiz.types";
+import { RefreshCcw } from "lucide-react";
 
 export const ChoiceList = () => {
   const [choiceList, setChoiceList] = useState<ChoiceType[]>([]);
@@ -49,6 +50,11 @@ export const ChoiceList = () => {
       >
         Funnection OX 질문
       </h1>
+      <RefreshCcw
+        onClick={deleteChoiceList}
+        size={32}
+        className="absolute right-5 top-6 h-5 w-5 cursor-pointer mdl:h-8 mdl:w-8"
+      />
       <div className="flex flex-wrap justify-center gap-5 overflow-y-scroll border-4 border-x-0 border-b-slate-500 border-t-slate-500 p-4 md:gap-10 mdl:border-none">
         {choiceList.map((choice) => (
           <Link

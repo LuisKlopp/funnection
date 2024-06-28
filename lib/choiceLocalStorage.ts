@@ -21,6 +21,7 @@ export const deleteChoiceList = () => {
   if (typeof window !== "undefined") {
     localStorage.removeItem("choiceList");
     localStorage.removeItem("clickedChoiceList");
+    window.location.reload();
   }
 };
 

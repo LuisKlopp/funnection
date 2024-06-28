@@ -21,6 +21,7 @@ export const deleteBalanceList = () => {
   if (typeof window !== "undefined") {
     localStorage.removeItem("balanceList");
     localStorage.removeItem("clickedBalanceList");
+    window.location.reload();
   }
 };
 
