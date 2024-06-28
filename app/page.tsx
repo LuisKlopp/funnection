@@ -1,12 +1,20 @@
-import { LoginBox } from "@/components/login-box";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="w-full max-w-xl h-[100dvh] flex flex-col justify-center items-center gap-4">
-      <div className="drop-shadow-lg mb-5">
-        <span className="text-4xl font-bold text-slate-700">Funnection</span>
+    <div className="flex h-[100dvh] flex-col items-center justify-center gap-4">
+      <div className="flex flex-col gap-4 text-4xl text-[#094585]">
+        <span className="mb-8 text-6xl text-slate-800">자기소개</span>
+        <span>1. 닉네임은 무슨 의미인가요?</span>
+        <span>2. 소셜링에서 기대하는점은 무엇인가요?</span>
+        <span>3. 한 줄 자기소개 부탁드려요~</span>
       </div>
-      <LoginBox />
+      <Link
+        href={"/choice-page"}
+        className="button-base button-active custom-button absolute bottom-5 right-10 mb-4 !bg-white !text-slate-500"
+      >
+        OX 카드로 이동
+      </Link>
     </div>
   );
 }
