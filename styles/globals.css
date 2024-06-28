@@ -6,7 +6,12 @@ html,
 body,
 :root {
   line-height: normal;
+  -ms-overflow-style: none;
   scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .custom-no-underline {
