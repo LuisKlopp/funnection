@@ -108,6 +108,11 @@ body,
   background-color: #aa79bb;
 }
 
+.mobile-select-box-green {
+  border: none;
+  background-color: #52aa71;
+}
+
 .user-button {
   border-radius: 12px;
   font-weight: 500;

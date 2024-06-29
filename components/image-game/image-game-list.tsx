@@ -59,7 +59,7 @@ export const ImageGameList = () => {
             className={cn(
               "button-base mobile-select-box-white button-active",
               {
-                "mobile-select-box-black": clickedImageGames.includes(
+                "mobile-select-box-green": clickedImageGames.includes(
                   imageGame.id,
                 ),
               },
