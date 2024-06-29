@@ -18,6 +18,7 @@ export const ImageGameCounter = ({
   imageUsers,
 }: ImageGameCounterProps) => {
   const [clicked, setClicked] = useState<boolean>(false);
+  const [topVoters, setTopVoters] = useState<number[]>([]);
 
   const handleAddVote = async (userId: number) => {
     try {
@@ -30,33 +31,68 @@ export const ImageGameCounter = ({
     }
   };
 
+  const handleShowResults = () => {
+    const sortedUsers = [...imageUsers].sort(
+      (a, b) => b.votes - a.votes,
+    );
+    const maxVotes = sortedUsers[0].votes;
+    const secondMaxVotes =
+      sortedUsers.find((user) => user.votes < maxVotes)?.votes ||
+      maxVotes;
+
+    const topVoters = sortedUsers
+      .filter(
+        (user) =>
+          user.votes === maxVotes || user.votes === secondMaxVotes,
+      )
+      .map((user) => user.id);
+
+    setTopVoters(topVoters);
+  };
+
   return (
-    <div className="flex w-full flex-col flex-wrap items-center justify-center gap-4 mdl:flex-row mdl:gap-10">
-      {imageUsers.map((user) => (
-        <div
-          key={user.id}
-          onClick={() => handleAddVote(user.id)}
-          className={cn(
-            "mdl:w-26 user-button flex w-[70%] cursor-pointer items-center gap-8 rounded-lg bg-white shadow-xl mdl:pointer-events-none mdl:w-auto mdl:flex-col mdl:bg-inherit mdl:shadow-none",
-            {
-              "pointer-events-none bg-[#bbbbcf]": clicked,
-            },
-          )}
+    <div className="flex w-full flex-col gap-20">
+      <div className="flex w-full flex-col flex-wrap items-center justify-center gap-4 mdl:flex-row mdl:gap-10">
+        {imageUsers.map((user) => (
+          <div
+            key={user.id}
+            onClick={() => handleAddVote(user.id)}
+            className={cn(
+              "mdl:w-26 user-button flex w-[70%] cursor-pointer items-center gap-8 rounded-lg bg-white shadow-xl mdl:pointer-events-none mdl:w-auto mdl:flex-col mdl:bg-inherit mdl:shadow-none",
+              {
+                "pointer-events-none bg-[#bbbbcf]": clicked,
+                "border-2 border-red-500": topVoters.includes(
+                  user.id,
+                ),
+              },
+            )}
+          >
+            <div className="w-10 rounded-lg mdl:w-24">
+              <Image
+                className="rounded-lg"
+                alt="default-image"
+                src={user.gender === "M" ? ManImage : WomanImage}
+              />
+            </div>
+            <div className="flex flex-row items-center gap-4 mdl:flex-col">
+              <span className="text-base text-blue-800 mdl:text-lg">
+                {user.nickname}
+              </span>
+              <span className="text-base text-blue-800 mdl:text-lg">
+                {user.votes}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="hidden w-full justify-center mdl:flex">
+        <button
+          onClick={handleShowResults}
+          className="button-base custom-button w-[150px]"
         >
-          <div className="w-10 rounded-lg mdl:w-24">
-            <Image
-              className="rounded-lg"
-              alt="default-image"
-              src={user.gender === "M" ? ManImage : WomanImage}
-            />
-          </div>
-          <div className="flex flex-row items-center gap-4 mdl:flex-col">
-            <span className="text-base text-blue-800 mdl:text-lg">
-              {user.nickname}
-            </span>
-          </div>
-        </div>
-      ))}
+          결과 확인
+        </button>
+      </div>
     </div>
   );
 };

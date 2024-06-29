@@ -2,7 +2,6 @@ import { fetchImageGame } from "@/api/fetchImageGameList";
 import Link from "next/link";
 
 import { ImageGameCounter } from "@/components/image-game/image-game-counter";
-import { ReloadButton } from "@/components/question/reload-button";
 
 type ImageGameDetailPageProps = {
   params: { slug: string[] };
@@ -33,7 +32,6 @@ const ImageGameDetailPage = async ({
         imageId={imageQuestion.id}
         imageUsers={imageUsers}
       />
-      <ReloadButton className="hidden w-[200px] mdl:block" />
     </div>
   );
 };
