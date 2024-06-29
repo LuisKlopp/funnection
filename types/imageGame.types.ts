@@ -8,6 +8,7 @@ export interface ImageGameUserType {
   id: number;
   nickname: string;
   votes: number;
+  gender: string;
 }
 
 export interface ImageGameDetailType {

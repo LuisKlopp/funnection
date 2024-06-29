@@ -21,6 +21,9 @@ export const fetchImageGame = async (
 ): Promise<ImageGameDetailType> => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/image-game/${id}`,
+    {
+      cache: "no-cache",
+    },
   );
   if (!response.ok) {
     throw new Error("Failed to fetch question");
