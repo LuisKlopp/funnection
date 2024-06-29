@@ -3,12 +3,17 @@
 import { useRouter } from "next/navigation";
 
 import { Button } from "../button";
+import { cn } from "@/lib/utils";
 
-export const ReloadButton = () => {
+interface RoloadButtonProps {
+  className?: string;
+}
+
+export const ReloadButton = ({ className }: RoloadButtonProps) => {
   const router = useRouter();
 
   return (
-    <div className="w-[300px]">
+    <div className={cn(className, { "w-[300px]": !className })}>
       <Button
         buttonTitle="결과 확인"
         onClick={() => router.refresh()}
