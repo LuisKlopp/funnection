@@ -36,15 +36,9 @@ export const ImageGameCounter = ({
       (a, b) => b.votes - a.votes,
     );
     const maxVotes = sortedUsers[0].votes;
-    const secondMaxVotes =
-      sortedUsers.find((user) => user.votes < maxVotes)?.votes ||
-      maxVotes;
 
     const topVoters = sortedUsers
-      .filter(
-        (user) =>
-          user.votes === maxVotes || user.votes === secondMaxVotes,
-      )
+      .filter((user) => user.votes === maxVotes)
       .map((user) => user.id);
 
     setTopVoters(topVoters);
