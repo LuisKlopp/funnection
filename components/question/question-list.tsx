@@ -15,6 +15,7 @@ import {
   saveClickedQuestion,
   deleteQuestions,
 } from "@/lib/questionLocalStorage";
+import { LinkButton } from "../link-button";
 
 export const QuestionList = () => {
   const [questions, setQuestions] = useState<QuestionType[]>([]);
@@ -90,19 +91,12 @@ export const QuestionList = () => {
           </Link>
         ))}
       </div>
-      <div className="flex w-full justify-between px-4">
-        <Link
-          href="/choice-page"
-          className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
-        >
-          OX 카드로 이동
-        </Link>
-        <Link
-          href={"/balance-page"}
-          className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
-        >
-          밸런스 카드로 이동
-        </Link>
+      <div className="flex w-full px-4">
+        <LinkButton
+          href="/"
+          title="홈으로 이동"
+          className="flex !w-[150px] justify-center mdl:text-[20px]"
+        />
       </div>
     </div>
   );

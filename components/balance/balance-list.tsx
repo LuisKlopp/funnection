@@ -15,6 +15,7 @@ import {
 import { BalanceType } from "@/types/quiz.types";
 import { useEffect, useState } from "react";
 import { RefreshCcw } from "lucide-react";
+import { LinkButton } from "../link-button";
 
 export const BalanceList = () => {
   const [balanceList, setBalanceList] = useState<BalanceType[]>([]);
@@ -93,13 +94,12 @@ export const BalanceList = () => {
           </Link>
         ))}
       </div>
-      <div className="flex w-full justify-between px-4">
-        <Link
-          href="/question-page"
-          className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
-        >
-          단답 카드로 이동
-        </Link>
+      <div className="flex w-full px-4">
+        <LinkButton
+          href="/"
+          title="홈으로 이동"
+          className="flex !w-[150px] justify-center mdl:text-[20px]"
+        />
       </div>
     </div>
   );

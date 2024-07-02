@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LinkButton } from "@/components/link-button";
 
 export default function Home() {
   return (
@@ -6,12 +6,11 @@ export default function Home() {
       <span className="text-4xl text-slate-700 mdl:text-6xl">
         Funnection
       </span>
-      <Link
-        href="/choice-page"
-        className="button-base mb-4 flex w-[150px] items-center justify-center !bg-white !text-slate-500 mdl:w-[250px]"
-      >
-        시작하기
-      </Link>
+      <div className="flex flex-col">
+        <LinkButton href="/choice-page" title="OX 카드로 이동" />
+        <LinkButton href="/question-page" title="단답 카드로 이동" />
+        <LinkButton href="/balance-page" title="밸런스 카드로 이동" />
+      </div>
     </div>
   );
 }

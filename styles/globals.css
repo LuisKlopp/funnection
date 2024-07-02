@@ -38,7 +38,6 @@ body,
   transition: all 0.1s ease-in-out;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: none;
-  display: inline-block;
 }
 
 .button-base:active {
