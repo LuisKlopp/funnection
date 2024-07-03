@@ -91,10 +91,10 @@ export const QuestionList = () => {
           </Link>
         ))}
       </div>
-      <div className="flex w-full px-4">
+      <div className="mb-4 flex w-full px-4">
         <LinkButton
           href="/"
-          title="홈으로 이동"
+          title="홈으로"
           className="flex !w-[150px] justify-center mdl:text-[20px]"
         />
       </div>

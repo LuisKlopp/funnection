@@ -11,9 +11,9 @@ export default function Home() {
         Funnection
       </Link>
       <div className="flex w-full flex-col items-center justify-center gap-4">
-        <LinkButton href="/choice-page" title="OX 카드로 이동" />
-        <LinkButton href="/question-page" title="단답 카드로 이동" />
-        <LinkButton href="/balance-page" title="밸런스 카드로 이동" />
+        <LinkButton href="/choice-page" title="OX 카드" />
+        <LinkButton href="/question-page" title="단답 카드" />
+        <LinkButton href="/balance-page" title="밸런스 카드" />
       </div>
     </div>
   );
