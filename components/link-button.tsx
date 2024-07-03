@@ -16,7 +16,7 @@ export const LinkButton = ({
     <Link
       href={href}
       className={cn(
-        "button-base button-active custom-button mb-4 w-[250px] !bg-white !text-slate-500 mdl:w-[250px]",
+        "button-base button-active custom-button w-[250px] !bg-white !text-slate-500",
         className,
       )}
     >
