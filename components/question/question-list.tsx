@@ -15,7 +15,6 @@ import {
   saveClickedQuestion,
   deleteQuestions,
 } from "@/lib/questionLocalStorage";
-import { LinkButton } from "../button/link-button";
 import { GoHomeButton } from "../button/go-home-button";
 
 export const QuestionList = () => {

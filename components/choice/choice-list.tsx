@@ -15,7 +15,6 @@ import {
 import { useEffect, useState } from "react";
 import { ChoiceType } from "@/types/quiz.types";
 import { RefreshCcw } from "lucide-react";
-import { LinkButton } from "../button/link-button";
 import { GoHomeButton } from "../button/go-home-button";
 
 export const ChoiceList = () => {

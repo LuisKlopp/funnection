@@ -2,7 +2,7 @@
 
 import { ChangeEvent, useState } from "react";
 
-import { Button } from "@/components/button";
+import { Button } from "@/components/button/button";
 import { Input } from "@/components/input";
 import { useRouter } from "next/navigation";
 
@@ -37,7 +37,7 @@ export const LoginBox = () => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-3">
+    <div className="flex w-full flex-col gap-3">
       <Input
         type="nickname"
         placeholder="문토 닉네임을 입력해주세요 :)"
@@ -50,7 +50,9 @@ export const LoginBox = () => {
         type="mbti"
         placeholder="mbti를 입력해주세요 :)"
         value={mbti}
-        onChange={(e: ChangeEvent<HTMLInputElement>) => setMbti(e.target.value)}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setMbti(e.target.value)
+        }
       />
       <Button
         buttonTitle={loading ? "로딩중..." : "로그인"}
