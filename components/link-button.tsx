@@ -6,9 +6,7 @@ interface LinkButtonProps {
   title: string;
   className?: string;
 }
-{
-  /* <div className={cn(className, { "w-[300px]": !className })}> */
-}
+
 export const LinkButton = ({
   href,
   title,
@@ -18,7 +16,7 @@ export const LinkButton = ({
     <Link
       href={href}
       className={cn(
-        "button-base button-active custom-button mb-4 w-[150px] !bg-white !text-slate-500 mdl:w-[250px]",
+        "button-base button-active custom-button mb-4 w-[250px] !bg-white !text-slate-500 mdl:w-[250px]",
         className,
       )}
     >
