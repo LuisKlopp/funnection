@@ -1,4 +1,4 @@
-import { LinkButton } from "@/components/link-button";
+import { LinkButton } from "@/components/button/link-button";
 import Link from "next/link";
 
 export default function Home() {

@@ -15,7 +15,7 @@ import {
 import { BalanceType } from "@/types/quiz.types";
 import { useEffect, useState } from "react";
 import { RefreshCcw } from "lucide-react";
-import { LinkButton } from "../link-button";
+import { GoHomeButton } from "../button/go-home-button";
 
 export const BalanceList = () => {
   const [balanceList, setBalanceList] = useState<BalanceType[]>([]);
@@ -94,13 +94,7 @@ export const BalanceList = () => {
           </Link>
         ))}
       </div>
-      <div className="mb-4 flex w-full px-4">
-        <LinkButton
-          href="/"
-          title="홈으로"
-          className="flex !w-[150px] justify-center mdl:text-[20px]"
-        />
-      </div>
+      <GoHomeButton />
     </div>
   );
 };

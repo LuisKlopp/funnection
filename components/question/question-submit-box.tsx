@@ -2,14 +2,16 @@
 
 import { ChangeEvent, useState } from "react";
 
-import { Button } from "../button";
+import { Button } from "../button/button";
 import { Input } from "../input";
 
 interface QuestionSubmitBoxProps {
   questionId: string;
 }
 
-export const QuestionSubmitBox = ({ questionId }: QuestionSubmitBoxProps) => {
+export const QuestionSubmitBox = ({
+  questionId,
+}: QuestionSubmitBoxProps) => {
   const [answerText, setAnswerText] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -32,7 +34,7 @@ export const QuestionSubmitBox = ({ questionId }: QuestionSubmitBoxProps) => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className="flex w-full flex-col gap-4">
       <Input
         placeholder="답변을 입력해주세요 :)"
         value={answerText}
@@ -47,7 +49,7 @@ export const QuestionSubmitBox = ({ questionId }: QuestionSubmitBoxProps) => {
         disabled={answerText === ""}
       />
       {isSubmitted && (
-        <div className="w-full flex justify-center">
+        <div className="flex w-full justify-center">
           <span>답변이 완료되었습니다!</span>
         </div>
       )}

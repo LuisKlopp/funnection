@@ -15,7 +15,8 @@ import {
 import { useEffect, useState } from "react";
 import { ChoiceType } from "@/types/quiz.types";
 import { RefreshCcw } from "lucide-react";
-import { LinkButton } from "../link-button";
+import { LinkButton } from "../button/link-button";
+import { GoHomeButton } from "../button/go-home-button";
 
 export const ChoiceList = () => {
   const [choiceList, setChoiceList] = useState<ChoiceType[]>([]);
@@ -93,13 +94,7 @@ export const ChoiceList = () => {
           </Link>
         ))}
       </div>
-      <div className="mb-4 flex w-full px-4">
-        <LinkButton
-          href="/"
-          title="홈으로"
-          className="flex !w-[150px] justify-center mdl:text-[20px]"
-        />
-      </div>
+      <GoHomeButton />
     </div>
   );
 };

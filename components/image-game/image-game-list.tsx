@@ -15,6 +15,7 @@ import {
   saveClickedImageGameList,
   deleteImageGameList,
 } from "@/lib/imageGameLocalStorage";
+import { GoHomeButton } from "../button/go-home-button";
 
 export const ImageGameList = () => {
   const [imageGames, setImageGames] = useState<ImageGameType[]>([]);
@@ -90,20 +91,7 @@ export const ImageGameList = () => {
           </Link>
         ))}
       </div>
-      <div className="flex w-full justify-between px-4">
-        <Link
-          href="/choice-page"
-          className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
-        >
-          OX 카드로 이동
-        </Link>
-        <Link
-          href={"/balance-page"}
-          className="button-base button-active custom-button mb-4 !bg-white !text-slate-500"
-        >
-          밸런스 카드로 이동
-        </Link>
-      </div>
+      <GoHomeButton />
     </div>
   );
 };

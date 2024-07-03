@@ -15,7 +15,8 @@ import {
   saveClickedQuestion,
   deleteQuestions,
 } from "@/lib/questionLocalStorage";
-import { LinkButton } from "../link-button";
+import { LinkButton } from "../button/link-button";
+import { GoHomeButton } from "../button/go-home-button";
 
 export const QuestionList = () => {
   const [questions, setQuestions] = useState<QuestionType[]>([]);
@@ -91,13 +92,7 @@ export const QuestionList = () => {
           </Link>
         ))}
       </div>
-      <div className="mb-4 flex w-full px-4">
-        <LinkButton
-          href="/"
-          title="홈으로"
-          className="flex !w-[150px] justify-center mdl:text-[20px]"
-        />
-      </div>
+      <GoHomeButton />
     </div>
   );
 };
