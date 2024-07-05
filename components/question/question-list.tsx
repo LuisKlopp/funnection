@@ -57,6 +57,7 @@ export const QuestionList = () => {
         {questions.map((question) => (
           <Link
             key={question.id}
+            scroll={false}
             className={cn(
               "button-base mobile-select-box-white button-active",
               {

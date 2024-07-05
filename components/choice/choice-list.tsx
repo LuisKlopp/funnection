@@ -22,6 +22,7 @@ export const ChoiceList = () => {
   const [clickedChoiceList, setClickedChoiceList] = useState<
     number[]
   >(getClickedChoiceList());
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChoiceListClick = (id: number) => {
     saveClickedChoiceList(id);
