@@ -31,10 +31,14 @@ export const ImageGameCounter = ({
     }
   };
 
-  const handleShowResults = () => {
-    const sortedUsers = [...imageUsers].sort(
-      (a, b) => b.votes - a.votes,
+  const handleShowResults = async () => {
+    const imageData = await axios.get(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/image-game/${imageId}`,
     );
+
+    const users = imageData.data.users;
+
+    const sortedUsers = [...users].sort((a, b) => b.votes - a.votes);
     const maxVotes = sortedUsers[0].votes;
 
     const topVoters = sortedUsers
