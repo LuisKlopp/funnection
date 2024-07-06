@@ -73,11 +73,6 @@ export const BalanceCounter = ({
 
   return (
     <div className="flex w-full flex-col items-center justify-center gap-20">
-      {isBalanced && (
-        <div className="animate-grow-rotate absolute mt-20">
-          <span className="text-3xl text-red-700">Balance!!!</span>
-        </div>
-      )}
       <div className="flex w-full flex-col justify-center gap-10 mdl:flex-row mdl:gap-40">
         <BalanceButton
           onClick={incrementLeft}
@@ -107,6 +102,12 @@ export const BalanceCounter = ({
         >
           결과 확인
         </button>
+        {isBalanced && (
+          <div className="animate-grow-rotate absolute mb-10 ml-40 hidden flex-col mdl:flex">
+            <span className="text-3xl text-red-700">Balance!!!</span>
+            <span className="text-3xl text-red-700">Balance!!!</span>
+          </div>
+        )}
       </div>
     </div>
   );
