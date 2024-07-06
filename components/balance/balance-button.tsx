@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 interface BalanceButtonProps {
   onClick: () => Promise<void>;
   answer: string;
@@ -14,16 +16,23 @@ export const BalanceButton = ({
   disabled,
 }: BalanceButtonProps) => {
   return (
-    <div className="flex flex-col gap-20 items-center">
+    <div className="flex flex-col items-center gap-20">
       <button
-        className="bg-white px-10 py-4 rounded-lg shadow-xl w-[90%] mdl:w-auto cursor-pointer mdl:bg-inherit mdl:shadow-none mdl:pointer-events-none"
+        className={cn(
+          "w-[90%] cursor-pointer rounded-lg bg-white px-10 py-4 shadow-xl mdl:pointer-events-none mdl:w-auto mdl:bg-inherit mdl:shadow-none",
+          {
+            "button-base": !disabled,
+          },
+        )}
         onClick={onClick}
         disabled={disabled}
       >
         <span className={className}>{answer}</span>
       </button>
       <div className="hidden mdl:block">
-        <span className="text-5xl text-slate-700 font-bold">{counter}</span>
+        <span className="text-5xl font-bold text-slate-700">
+          {counter}
+        </span>
       </div>
     </div>
   );
