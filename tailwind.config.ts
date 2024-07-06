@@ -101,6 +101,16 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "grow-rotate": {
+          "0%": {
+            transform: "scale(0) rotate(-15deg)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "scale(1) rotate(-15deg)",
+            opacity: "1",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: {
@@ -115,6 +125,7 @@ const config = {
         },
       },
       animation: {
+        "grow-rotate": "grow-rotate 0.2s ease-out forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },

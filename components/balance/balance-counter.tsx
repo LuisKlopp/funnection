@@ -34,11 +34,17 @@ export const BalanceCounter = ({
   const [leftCount, setLeftCount] = useState(initialLeft);
   const [rightCount, setRightCount] = useState(initialRight);
   const [clicked, setClicked] = useState<string | null>(null);
+  const [isBalanced, setIsBalanced] = useState(false);
 
   const updateResults = async () => {
     const results = await fetchBalanceDetail(id);
     setLeftCount(results.leftCount);
     setRightCount(results.rightCount);
+
+    setIsBalanced(
+      results.leftCount === results.rightCount &&
+        results.leftCount !== 0,
+    );
   };
 
   const incrementLeft = async () => {
@@ -67,6 +73,11 @@ export const BalanceCounter = ({
 
   return (
     <div className="flex w-full flex-col items-center justify-center gap-20">
+      {isBalanced && (
+        <div className="animate-grow-rotate absolute mt-20">
+          <span className="text-3xl text-red-700">Balance!!!</span>
+        </div>
+      )}
       <div className="flex w-full flex-col justify-center gap-10 mdl:flex-row mdl:gap-40">
         <BalanceButton
           onClick={incrementLeft}
