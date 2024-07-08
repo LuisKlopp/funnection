@@ -18,12 +18,19 @@ const ChoiceDetailPage = async ({
         뒤로가기
       </Link>
       <div className="flex justify-center gap-4 whitespace-normal break-words px-4">
-        <span className="break-normal text-center text-3xl font-semibold text-slate-700 mdl:text-4xl">
-          {choice.id}.
-        </span>
-        <span className="break-keep text-center text-3xl font-normal text-slate-700 mdl:text-4xl">
-          {choice.question}
-        </span>
+        <div>
+          <span className="text-center text-3xl text-slate-700 mdl:hidden">
+            OX {choice.id}번 질문
+          </span>
+        </div>
+        <div className="hidden w-full justify-center mdl:flex">
+          <span className="break-normal text-center text-4xl font-semibold text-slate-700">
+            {choice.id}.&nbsp;
+          </span>
+          <span className="break-keep text-center text-4xl font-normal text-slate-700">
+            {choice.question}
+          </span>
+        </div>
       </div>
       <div className="w-full">
         <ChoiceCounter

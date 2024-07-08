@@ -36,9 +36,19 @@ const QuestionDetailPage = async ({
         <MoveLeft size={48} />
       </Link>
       <div className="flex w-full justify-center gap-4 px-4">
-        <span className="break-keep text-center text-3xl font-medium text-slate-700 mdl:text-4xl">
-          {question.id}. {question.question}
-        </span>
+        <div>
+          <span className="text-center text-3xl text-slate-700 mdl:hidden">
+            단답 {question.id}번 질문
+          </span>
+        </div>
+        <div className="hidden w-full justify-center mdl:flex">
+          <span className="break-normal text-center text-4xl font-semibold text-slate-700">
+            {question.id}.&nbsp;
+          </span>
+          <span className="break-keep text-center text-4xl font-normal text-slate-700">
+            {question.question}
+          </span>
+        </div>
       </div>
       <div className="w-full mdl:hidden">
         <QuestionSubmitBox questionId={id} />
