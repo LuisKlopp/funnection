@@ -1,8 +1,6 @@
 "use client";
 
 import { fetchUserList } from "@/api/fetchPersonalList";
-import ManImage from "@/public/man-image.png";
-import WomanImage from "@/public/woman-image.png";
 import {
   USER_LIST,
   UserImageType,
