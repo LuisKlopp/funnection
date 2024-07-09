@@ -1,11 +1,10 @@
-import ManImage from "@/public/man-image.png";
-import WomanImage from "@/public/woman-image.png";
 import Link from "next/link";
 import Image from "next/image";
 
 import { fetchUser } from "@/api/fetchPersonalList";
 import { PersonalSubmitBox } from "@/components/personal/personal-submit-box";
 import { PersonalCounter } from "@/components/personal/personal-counter";
+import { USER_LIST, UserImageType } from "@/constants/user.constants";
 
 type PersonalDetailPageProps = {
   params: { slug: string[] };
@@ -16,6 +15,8 @@ const PersonalDetailPage = async ({
 }: PersonalDetailPageProps) => {
   const id = params.slug[0];
   const user = await fetchUser(id);
+  const userImage = USER_LIST.find((img) => img.id === Number(id));
+  const src = (userImage as UserImageType).src;
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-10">
@@ -34,7 +35,7 @@ const PersonalDetailPage = async ({
             className="w-[180px] rounded-3xl"
             alt="user-image"
             priority
-            src={user.gender === "M" ? ManImage : WomanImage}
+            src={src}
           />
           <span className="break-normal text-center text-3xl font-semibold text-slate-700 mdl:text-4xl">
             {user.nickname} 님
