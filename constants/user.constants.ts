@@ -3,6 +3,7 @@ import thirdImage from "@/public/3-3.png";
 import fourthImage from "@/public/3-4.png";
 import fifthImage from "@/public/3-5.png";
 import sixthImage from "@/public/3-6.png";
+import eighthImage from "@/public/3-8.png";
 import ManImage from "@/public/man-image.png";
 import WomanImage from "@/public/woman-image.png";
 import { StaticImageData } from "next/image";
@@ -43,6 +44,6 @@ export const USER_LIST: UserImageType[] = [
   },
   {
     id: 8,
-    src: WomanImage,
+    src: eighthImage,
   },
 ];

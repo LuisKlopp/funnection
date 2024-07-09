@@ -67,7 +67,7 @@ export const PersonalList = () => {
                   src={src}
                 />
               </div>
-              <div className="text-center text-sm text-[#2s2s2s] mdl:text-2xl">
+              <div className="text-center text-sm text-slate-700 mdl:text-2xl">
                 {user.nickname}
               </div>
             </Link>
