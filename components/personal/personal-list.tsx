@@ -3,6 +3,10 @@
 import { fetchUserList } from "@/api/fetchPersonalList";
 import ManImage from "@/public/man-image.png";
 import WomanImage from "@/public/woman-image.png";
+import {
+  USER_LIST,
+  UserImageType,
+} from "../../constants/user.constants";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -44,21 +48,33 @@ export const PersonalList = () => {
         className="absolute right-5 top-6 h-5 w-5 cursor-pointer mdl:h-8 mdl:w-8"
       />
       <div className="flex flex-wrap justify-center gap-5 overflow-y-scroll border-4 border-x-0 border-b-slate-500 border-t-slate-500 p-4 md:gap-10 mdl:border-none">
-        {userList.map((user) => (
-          <Link key={user.id} href={`/personal-page/${user.id}`}>
-            <div className="button-base relative w-[100px] mdl:w-[150px]">
-              <Image
-                className="h-full w-full rounded-lg"
-                alt="default-image"
-                priority
-                src={user.gender === "M" ? ManImage : WomanImage}
-              />
-              <div className="absolute left-1/2 top-3/4 -translate-x-1/2 -translate-y-1/2 transform text-center text-sm text-white mdl:text-2xl">
+        {userList.map((user) => {
+          const userImage = USER_LIST.find(
+            (img) => img.id === user.id,
+          );
+
+          const src = (userImage as UserImageType).src;
+
+          return (
+            <Link
+              key={user.id}
+              href={`/personal-page/${user.id}`}
+              className="flex flex-col gap-4"
+            >
+              <div className="user-list-button h-36 w-[100px] mdl:h-48 mdl:w-[150px]">
+                <Image
+                  className="h-full w-full rounded-lg"
+                  alt="default-image"
+                  priority
+                  src={src}
+                />
+              </div>
+              <div className="text-center text-sm text-[#2s2s2s] mdl:text-2xl">
                 {user.nickname}
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
       <GoHomeButton />
     </div>

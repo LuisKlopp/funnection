@@ -125,6 +125,19 @@ body,
   transform: translateY(2px);
 }
 
+.user-list-button {
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  border: solid 3px #163b5e;
+  box-shadow: 5px 3px 5px rgb(43, 43, 43);
+}
+
+.user-list-button:active {
+  transform: translateY(10px);
+}
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -225,6 +238,20 @@ body,
   }
   .input-custom {
     width: 70%;
+    padding: 15px 10px 15px 15px;
+    outline: none;
+    &::placeholder {
+      font-size: 16px;
+      font-weight: 500;
+      color: #b0acae;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .textarea-custom {
+    width: 70%;
+    height: 200px;
     padding: 15px 10px 15px 15px;
     outline: none;
     &::placeholder {
