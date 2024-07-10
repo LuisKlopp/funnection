@@ -1,4 +1,4 @@
-import QuestionTitle from "@/components/question-title";
+import { QuestionTitle } from "@/components/question-title";
 import { QuestionSubmitBox } from "@/components/question/question-submit-box";
 import { ReloadButton } from "@/components/question/reload-button";
 import { QuestionType } from "@/types/question.types";

@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { ImageGameUserType } from "@/types/imageGame.types";
 import { USER_LIST, UserImageType } from "@/constants/user.constants";
 import axios from "axios";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { ImagePictureBox } from "../image-picture-box";
 
 interface ImageGameCounterProps {
   imageId: number;
@@ -67,14 +67,7 @@ export const ImageGameCounter = ({
                 },
               )}
             >
-              <div className="user-list-button h-[40px] w-[40px] rounded-lg mdl:h-44 mdl:w-[130px]">
-                <Image
-                  className="h-full w-full rounded-lg"
-                  alt="default-image"
-                  src={src}
-                  priority
-                />
-              </div>
+              <ImagePictureBox src={src} />
               <div className="flex flex-row items-center gap-4 mdl:flex-col">
                 <span
                   className={cn(

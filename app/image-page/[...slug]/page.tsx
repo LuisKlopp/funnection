@@ -2,7 +2,7 @@ import { fetchImageGame } from "@/api/fetchImageGameList";
 import Link from "next/link";
 
 import { ImageGameCounter } from "@/components/image-game/image-game-counter";
-import QuestionTitle from "@/components/question-title";
+import { QuestionTitle } from "@/components/question-title";
 
 type ImageGameDetailPageProps = {
   params: { slug: string[] };
@@ -21,7 +21,10 @@ const ImageGameDetailPage = async ({
       <Link href={"/image-page"} className="absolute left-5 top-5">
         뒤로가기
       </Link>
-      <div className="flex justify-center gap-4 whitespace-normal break-words px-4 mdl:mb-14">
+      <div className="text-center text-2xl font-normal text-slate-700 mdl:hidden">
+        {imageQuestion.id}.&nbsp; {imageQuestion.question}
+      </div>
+      <div className="hidden justify-center gap-4 whitespace-normal break-words px-4 mdl:mb-14 mdl:flex">
         <QuestionTitle>{imageQuestion.id}.</QuestionTitle>
         <QuestionTitle>{imageQuestion.question}</QuestionTitle>
       </div>

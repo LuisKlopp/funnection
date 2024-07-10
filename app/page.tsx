@@ -11,10 +11,13 @@ export default function Home() {
         Funnection
       </Link>
       <div className="flex w-full flex-col items-center justify-center gap-4">
-        <LinkButton href="/choice-page" title="OX 카드" />
-        <LinkButton href="/question-page" title="단답 카드" />
-        <LinkButton href="/balance-page" title="밸런스 카드" />
-        <LinkButton href="/personal-page" title="퍼스널 카드" />
+        <LinkButton href="/choice-page" title="Funnection OX" />
+        <LinkButton href="/question-page" title="Funnection 단답" />
+        <LinkButton href="/balance-page" title="Funnection 밸런스" />
+        <LinkButton
+          href="/personal-page"
+          title="Funnection 퍼스널 페이퍼"
+        />
       </div>
     </div>
   );

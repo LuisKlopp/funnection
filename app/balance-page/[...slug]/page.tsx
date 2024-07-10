@@ -1,6 +1,6 @@
 import { fetchBalance } from "@/api/fetchBalanceList";
 import { BalanceCounter } from "@/components/balance/balance-counter";
-import QuestionTitle from "@/components/question-title";
+import { QuestionTitle } from "@/components/question-title";
 import Link from "next/link";
 
 type BalanceDetailPageProps = {
@@ -18,7 +18,10 @@ const BalanceDetailPage = async ({
       <Link href={"/balance-page"} className="absolute left-5 top-5">
         뒤로가기
       </Link>
-      <div className="flex justify-center gap-4 whitespace-normal break-words px-4 text-3xl mdl:text-4xl">
+      <div className="text-center text-2xl font-normal text-slate-700 mdl:hidden">
+        {balance.id}.&nbsp; {balance.question}
+      </div>
+      <div className="hidden justify-center gap-4 whitespace-normal break-words px-4 text-3xl mdl:flex mdl:text-4xl">
         <QuestionTitle>{balance.id}.</QuestionTitle>
         <QuestionTitle>{balance.question}</QuestionTitle>
       </div>

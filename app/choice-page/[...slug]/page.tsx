@@ -1,6 +1,6 @@
 import { fetchChoice } from "@/api/fetchChoiceList";
 import { ChoiceCounter } from "@/components/choice/choice-counter";
-import QuestionTitle from "@/components/question-title";
+import { QuestionTitle } from "@/components/question-title";
 import Link from "next/link";
 
 type ChoiceDetailPageProps = {

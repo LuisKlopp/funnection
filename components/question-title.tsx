@@ -1,13 +1,11 @@
-interface QuestionTitle {
+interface QuestionTitleProps {
   children: React.ReactNode;
 }
 
-const QuestionTitle = ({ children }: QuestionTitle) => {
+export const QuestionTitle = ({ children }: QuestionTitleProps) => {
   return (
     <span className="break-keep text-center text-4xl font-normal text-slate-700">
       {children}
     </span>
   );
 };
-
-export default QuestionTitle;
