@@ -1,3 +1,4 @@
+import QuestionTitle from "@/components/question-title";
 import { QuestionSubmitBox } from "@/components/question/question-submit-box";
 import { ReloadButton } from "@/components/question/reload-button";
 import { QuestionType } from "@/types/question.types";
@@ -42,12 +43,8 @@ const QuestionDetailPage = async ({
           </span>
         </div>
         <div className="hidden w-full justify-center mdl:flex">
-          <span className="break-normal text-center text-4xl font-semibold text-slate-700">
-            {question.id}.&nbsp;
-          </span>
-          <span className="break-keep text-center text-4xl font-normal text-slate-700">
-            {question.question}
-          </span>
+          <QuestionTitle>{question.id}.&nbsp;</QuestionTitle>
+          <QuestionTitle>{question.question}</QuestionTitle>
         </div>
       </div>
       <div className="w-full mdl:hidden">

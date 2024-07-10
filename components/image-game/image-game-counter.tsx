@@ -63,7 +63,7 @@ export const ImageGameCounter = ({
                 "mdl:w-26 user-button flex w-[70%] cursor-pointer items-center gap-8 rounded-lg bg-white shadow-xl mdl:pointer-events-none mdl:w-auto mdl:flex-col mdl:bg-inherit mdl:shadow-none",
                 {
                   "pointer-events-none bg-[#bbbbcf]": clicked,
-                  "mdl:bg-[#973089]": topVoters.includes(user.id),
+                  "mdl:bg-[#2c3c8d]": topVoters.includes(user.id),
                 },
               )}
             >
@@ -94,7 +94,7 @@ export const ImageGameCounter = ({
       <div className="hidden w-full justify-center mdl:flex">
         <button
           onClick={handleShowResults}
-          className="button-base custom-button w-[150px]"
+          className="button-base custom-button box-shadow-03 w-[150px]"
         >
           결과 확인
         </button>

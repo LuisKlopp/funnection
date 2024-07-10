@@ -66,14 +66,14 @@ export const ChoiceCounter = ({
           onClick={incrementYes}
           choiceType="O"
           count={yesCount}
-          className="text-4xl text-blue-700 mdl:text-9xl"
+          className="text-shadow-04 text-4xl text-blue-700 mdl:text-9xl"
           disabled={!!clicked}
         />
         <ChoiceButton
           onClick={incrementNo}
           choiceType="X"
           count={noCount}
-          className="text-4xl text-red-700 mdl:text-9xl"
+          className="text-shadow-04 text-4xl text-red-700 mdl:text-9xl"
           disabled={!!clicked}
         />
       </div>
@@ -85,7 +85,7 @@ export const ChoiceCounter = ({
       <div className="hidden mdl:block">
         <button
           onClick={updateResults}
-          className="button-base custom-button button-active w-[150px]"
+          className="button-base custom-button box-shadow-03 w-[150px]"
         >
           결과 확인
         </button>

@@ -17,7 +17,7 @@ export const ReloadButton = ({ className }: RoloadButtonProps) => {
       <Button
         buttonTitle="결과 확인"
         onClick={() => router.refresh()}
-        className="font-normal"
+        className="box-shadow-03 font-normal"
       />
     </div>
   );

@@ -73,12 +73,12 @@ export const BalanceCounter = ({
 
   return (
     <div className="flex w-full flex-col items-center justify-center gap-20">
-      <div className="flex w-full flex-col justify-center gap-10 mdl:flex-row mdl:gap-40">
+      <div className="text-shadow-04 flex w-full flex-col justify-center gap-10 mdl:flex-row mdl:gap-40">
         <BalanceButton
           onClick={incrementLeft}
           answer={leftAnswer}
           counter={leftCount}
-          className="break-keep text-2xl text-[#5252ff] mdl:text-3xl"
+          className="text-shadow-01 break-keep text-2xl text-[#5252ff] mdl:text-3xl"
           disabled={!!clicked}
         />
 
@@ -86,7 +86,7 @@ export const BalanceCounter = ({
           onClick={incrementRight}
           answer={rightAnswer}
           counter={rightCount}
-          className="break-keep text-2xl text-[#3a9e69] mdl:text-3xl"
+          className="text-shadow-01 break-keep text-2xl text-[#3a9e69] mdl:text-3xl"
           disabled={!!clicked}
         />
       </div>
@@ -98,12 +98,12 @@ export const BalanceCounter = ({
       <div className="hidden mdl:block">
         <button
           onClick={updateResults}
-          className="button-base custom-button button-active w-[150px]"
+          className="button-base custom-button box-shadow-03 w-[150px]"
         >
           결과 확인
         </button>
         {isBalanced && (
-          <div className="animate-grow-rotate absolute mb-10 ml-40 hidden flex-col mdl:flex">
+          <div className="absolute mb-10 ml-40 hidden animate-grow-rotate flex-col mdl:flex">
             <span className="text-3xl text-red-700">Balance!!!</span>
             <span className="text-3xl text-red-700">Balance!!!</span>
           </div>

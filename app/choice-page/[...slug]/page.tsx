@@ -1,5 +1,6 @@
 import { fetchChoice } from "@/api/fetchChoiceList";
 import { ChoiceCounter } from "@/components/choice/choice-counter";
+import QuestionTitle from "@/components/question-title";
 import Link from "next/link";
 
 type ChoiceDetailPageProps = {
@@ -24,12 +25,8 @@ const ChoiceDetailPage = async ({
           </span>
         </div>
         <div className="hidden w-full justify-center mdl:flex">
-          <span className="break-normal text-center text-4xl font-semibold text-slate-700">
-            {choice.id}.&nbsp;
-          </span>
-          <span className="break-keep text-center text-4xl font-normal text-slate-700">
-            {choice.question}
-          </span>
+          <QuestionTitle>{choice.id}.&nbsp;</QuestionTitle>
+          <QuestionTitle>{choice.question}</QuestionTitle>
         </div>
       </div>
       <div className="w-full">

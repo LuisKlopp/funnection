@@ -1,5 +1,6 @@
 import { fetchBalance } from "@/api/fetchBalanceList";
 import { BalanceCounter } from "@/components/balance/balance-counter";
+import QuestionTitle from "@/components/question-title";
 import Link from "next/link";
 
 type BalanceDetailPageProps = {
@@ -18,12 +19,8 @@ const BalanceDetailPage = async ({
         뒤로가기
       </Link>
       <div className="flex justify-center gap-4 whitespace-normal break-words px-4 text-3xl mdl:text-4xl">
-        <span className="break-normal text-center font-semibold text-slate-700">
-          {balance.id}.
-        </span>
-        <span className="break-keep text-center font-normal text-slate-700">
-          {balance.question}
-        </span>
+        <QuestionTitle>{balance.id}.</QuestionTitle>
+        <QuestionTitle>{balance.question}</QuestionTitle>
       </div>
       <div className="w-full">
         <BalanceCounter

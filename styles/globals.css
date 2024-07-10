@@ -171,6 +171,19 @@ body,
   animation: fadeInUp 1s ease-out;
 }
 
+.text-shadow-04 {
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+.text-shadow-02 {
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.text-shadow-01 {
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+.box-shadow-03 {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
