@@ -42,7 +42,7 @@ const PersonalDetailPage = async ({
           </span>
         </div>
       </div>
-      <div className="hidden mdl:block">
+      <div className="z-10 hidden mdl:block">
         <PersonalCounter userId={user.id} />
       </div>
     </div>

@@ -15,6 +15,9 @@ const config = {
       padding: "2rem",
     },
     extend: {
+      zIndex: {
+        "5": "5",
+      },
       backgroundImage: {
         "complex-gradient":
           "linear-gradient(to right, #000000 1%, #920028 100%)",

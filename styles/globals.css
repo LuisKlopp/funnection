@@ -138,6 +138,24 @@ body,
   transform: translateY(10px);
 }
 
+.personal-message-box {
+  height: 150px;
+  width: 400px;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+  background-color: rgb(241, 248, 255);
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: rgb(208, 208, 208);
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+  color: #313132;
+  &::-webkit-scrollbar {
+    display: block;
+  }
+}
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -272,13 +290,12 @@ body,
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: none;
   border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #bbbbbb;
+  background: rgb(197, 197, 197);
   border-radius: 5px;
 }
 
