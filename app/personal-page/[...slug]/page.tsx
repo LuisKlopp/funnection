@@ -32,7 +32,7 @@ const PersonalDetailPage = async ({
       <div className="flex flex-col">
         <div className="hidden flex-col gap-4 mdl:flex">
           <Image
-            className="w-[180px] rounded-3xl"
+            className="user-list-button pointer-events-none w-[180px] rounded-3xl"
             alt="user-image"
             priority
             src={src}

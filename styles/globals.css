@@ -131,7 +131,7 @@ body,
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   border: solid 3px #163b5e;
-  box-shadow: 5px 3px 5px rgb(43, 43, 43);
+  box-shadow: 2px 3px 5px rgb(43, 43, 43);
 }
 
 .user-list-button:active {
