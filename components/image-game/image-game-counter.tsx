@@ -60,7 +60,7 @@ export const ImageGameCounter = ({
               key={user.id}
               onClick={() => handleAddVote(user.id)}
               className={cn(
-                "mdl:w-26 user-button flex w-[70%] cursor-pointer items-center gap-8 rounded-lg bg-white shadow-xl mdl:pointer-events-none mdl:w-auto mdl:flex-col mdl:bg-inherit mdl:shadow-none",
+                "mdl:w-26 user-button flex w-[70%] cursor-pointer items-center gap-4 rounded-lg bg-white shadow-xl mdl:pointer-events-none mdl:w-auto mdl:flex-col mdl:bg-inherit mdl:shadow-none",
                 {
                   "pointer-events-none bg-[#bbbbcf]": clicked,
                   "mdl:bg-[#2c3c8d]": topVoters.includes(user.id),
@@ -68,7 +68,7 @@ export const ImageGameCounter = ({
               )}
             >
               <ImagePictureBox src={src} />
-              <div className="flex flex-row items-center gap-4 mdl:flex-col">
+              <div className="p-2">
                 <span
                   className={cn(
                     "text-base text-slate-700 mdl:text-lg",
