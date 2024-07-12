@@ -74,7 +74,7 @@ export const PersonalList = () => {
           );
         })}
       </div>
-      <GoHomeButton />
+      <GoHomeButton href="/image-page" title="이미지 게임" />
     </div>
   );
 };

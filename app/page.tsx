@@ -14,10 +14,6 @@ export default function Home() {
         <LinkButton href="/choice-page" title="Funnection OX" />
         <LinkButton href="/question-page" title="Funnection 단답" />
         <LinkButton href="/balance-page" title="Funnection 밸런스" />
-        <LinkButton
-          href="/personal-page"
-          title="Funnection 퍼스널 페이퍼"
-        />
       </div>
     </div>
   );
