@@ -1,7 +1,6 @@
 export interface ImageGameType {
   id: number;
   question: string;
-  isClicked: boolean;
 }
 
 export interface ImageGameUserType {

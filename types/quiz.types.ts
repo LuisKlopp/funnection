@@ -5,7 +5,6 @@ export interface BalanceType {
   rightAnswer: string;
   leftCount: number;
   rightCount: number;
-  isClicked: boolean;
 }
 
 export interface ResultsType {
@@ -18,5 +17,4 @@ export interface ChoiceType {
   question: string;
   yesCount: number;
   noCount: number;
-  isClicked: boolean;
 }

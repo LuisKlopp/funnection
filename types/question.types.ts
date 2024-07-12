@@ -7,5 +7,4 @@ export interface QuestionType {
   id: number;
   question: string;
   answers: AnswerType[];
-  isClicked: boolean;
 }

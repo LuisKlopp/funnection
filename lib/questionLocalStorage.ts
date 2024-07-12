@@ -9,9 +9,8 @@ export const getQuestions = () => {
 
 export const saveQuestions = (questions: QuestionType[]) => {
   if (typeof window !== "undefined") {
-    const data = questions.map(({ id, isClicked }) => ({
+    const data = questions.map(({ id }) => ({
       id,
-      isClicked,
     }));
     localStorage.setItem("questions", JSON.stringify(data));
   }

@@ -9,9 +9,8 @@ export const getImageGameList = () => {
 
 export const saveImageGameList = (imageGameList: ImageGameType[]) => {
   if (typeof window !== "undefined") {
-    const data = imageGameList.map(({ id, isClicked }) => ({
+    const data = imageGameList.map(({ id }) => ({
       id,
-      isClicked,
     }));
     localStorage.setItem("imageGameList", JSON.stringify(data));
   }
