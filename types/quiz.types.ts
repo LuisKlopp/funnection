@@ -17,4 +17,5 @@ export interface ChoiceType {
   question: string;
   yesCount: number;
   noCount: number;
+  category: "primary" | "love" | "adult" | "none";
 }

@@ -6,5 +6,6 @@ export interface AnswerType {
 export interface QuestionType {
   id: number;
   question: string;
+  category: "primary" | "love" | "adult" | "none";
   answers: AnswerType[];
 }

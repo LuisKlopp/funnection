@@ -9,8 +9,9 @@ export const getChoiceList = () => {
 
 export const saveChoiceList = (choiceList: ChoiceType[]) => {
   if (typeof window !== "undefined") {
-    const data = choiceList.map(({ id }) => ({
+    const data = choiceList.map(({ id, category }) => ({
       id,
+      category,
     }));
     localStorage.setItem("choiceList", JSON.stringify(data));
   }
