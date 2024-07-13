@@ -16,6 +16,7 @@ import {
   deleteQuestions,
 } from "@/lib/questionLocalStorage";
 import { GoHomeButton } from "../button/go-home-button";
+import { EmojiComponent } from "../emoji-component";
 
 export const QuestionList = () => {
   const [questions, setQuestions] = useState<QuestionType[]>([]);
@@ -88,6 +89,7 @@ export const QuestionList = () => {
               >
                 {question.id}
               </div>
+              <EmojiComponent category={question.category} />
             </div>
           </Link>
         ))}

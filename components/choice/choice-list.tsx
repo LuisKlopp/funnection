@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { ChoiceType } from "@/types/quiz.types";
 import { RefreshCcw } from "lucide-react";
 import { GoHomeButton } from "../button/go-home-button";
+import { EmojiComponent } from "../emoji-component";
 
 export const ChoiceList = () => {
   const [choiceList, setChoiceList] = useState<ChoiceType[]>([]);
@@ -86,6 +87,7 @@ export const ChoiceList = () => {
               >
                 {choice.id}
               </div>
+              <EmojiComponent category={choice.category} />
             </div>
           </Link>
         ))}

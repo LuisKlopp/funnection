@@ -16,6 +16,7 @@ import { BalanceType } from "@/types/quiz.types";
 import { useEffect, useState } from "react";
 import { RefreshCcw } from "lucide-react";
 import { GoHomeButton } from "../button/go-home-button";
+import { EmojiComponent } from "../emoji-component";
 
 export const BalanceList = () => {
   const [balanceList, setBalanceList] = useState<BalanceType[]>([]);
@@ -87,6 +88,7 @@ export const BalanceList = () => {
               >
                 {balance.id}
               </div>
+              <EmojiComponent category={balance.category} />
             </div>
           </Link>
         ))}
