@@ -37,7 +37,7 @@ const PersonalDetailPage = async ({
             priority
             src={src}
           />
-          <span className="break-normal text-center text-3xl font-semibold text-slate-700 mdl:text-4xl">
+          <span className="break-normal text-center text-3xl text-slate-700 mdl:text-4xl">
             {user.nickname} 님
           </span>
         </div>
