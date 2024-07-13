@@ -9,8 +9,9 @@ export const getBalanceList = () => {
 
 export const saveBalanceList = (balanceList: BalanceType[]) => {
   if (typeof window !== "undefined") {
-    const data = balanceList.map(({ id }) => ({
+    const data = balanceList.map(({ id, category }) => ({
       id,
+      category,
     }));
     localStorage.setItem("balanceList", JSON.stringify(data));
   }

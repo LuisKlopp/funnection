@@ -5,6 +5,7 @@ export interface BalanceType {
   rightAnswer: string;
   leftCount: number;
   rightCount: number;
+  category: "primary" | "love" | "adult" | "none";
 }
 
 export interface ResultsType {
