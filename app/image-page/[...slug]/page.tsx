@@ -21,8 +21,10 @@ const ImageGameDetailPage = async ({
       <Link href={"/image-page"} className="absolute left-5 top-5">
         뒤로가기
       </Link>
-      <div className="text-center text-2xl font-normal text-slate-700 mdl:hidden">
-        {imageQuestion.id}.&nbsp; {imageQuestion.question}
+      <div>
+        <span className="text-center text-3xl text-slate-700 mdl:hidden">
+          이미지게임 {id}번 질문
+        </span>
       </div>
       <div className="hidden justify-center gap-4 whitespace-normal break-words px-4 mdl:mb-14 mdl:flex">
         <QuestionTitle>{imageQuestion.id}.</QuestionTitle>

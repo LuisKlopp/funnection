@@ -30,7 +30,7 @@ export const BalanceButton = ({
         <span className={className}>{answer}</span>
       </button>
       <div className="hidden mdl:block">
-        <span className="text-shadow-02 text-5xl font-bold text-slate-700">
+        <span className="text-6xl font-normal text-slate-700">
           {counter}
         </span>
       </div>
