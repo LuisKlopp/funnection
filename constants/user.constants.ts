@@ -1,11 +1,9 @@
-import firstImage from "@/public/3-1.png";
-import thirdImage from "@/public/3-3.png";
-import fourthImage from "@/public/3-4.png";
-import fifthImage from "@/public/3-5.png";
-import sixthImage from "@/public/3-6.png";
-import eighthImage from "@/public/3-8.png";
+import firstImage from "@/public/4-1.png";
+import fourthImage from "@/public/4-4.png";
+import seventhImage from "@/public/4-7.png";
+import eighthImage from "@/public/4-8.png";
 import ManImage from "@/public/man-image.png";
-import WomanImage from "@/public/woman-image.png";
+// import WomanImage from "@/public/woman-image.png";
 import { StaticImageData } from "next/image";
 
 export interface UserImageType {
@@ -20,11 +18,11 @@ export const USER_LIST: UserImageType[] = [
   },
   {
     id: 2,
-    src: WomanImage,
+    src: ManImage,
   },
   {
     id: 3,
-    src: thirdImage,
+    src: ManImage,
   },
   {
     id: 4,
@@ -32,15 +30,15 @@ export const USER_LIST: UserImageType[] = [
   },
   {
     id: 5,
-    src: fifthImage,
+    src: ManImage,
   },
   {
     id: 6,
-    src: sixthImage,
+    src: ManImage,
   },
   {
     id: 7,
-    src: ManImage,
+    src: seventhImage,
   },
   {
     id: 8,
