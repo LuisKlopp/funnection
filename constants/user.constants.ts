@@ -1,4 +1,5 @@
 import firstImage from "@/public/4-1.png";
+import thirdImage from "@/public/4-3.png";
 import fourthImage from "@/public/4-4.png";
 import seventhImage from "@/public/4-7.png";
 import eighthImage from "@/public/4-8.png";
@@ -22,7 +23,7 @@ export const USER_LIST: UserImageType[] = [
   },
   {
     id: 3,
-    src: ManImage,
+    src: thirdImage,
   },
   {
     id: 4,
