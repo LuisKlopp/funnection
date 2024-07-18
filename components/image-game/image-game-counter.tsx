@@ -68,7 +68,7 @@ export const ImageGameCounter = ({
                 "mdl:w-26 user-button flex w-[70%] cursor-pointer items-center gap-4 rounded-lg bg-white shadow-xl mdl:pointer-events-none mdl:w-auto mdl:flex-col mdl:bg-inherit mdl:shadow-none",
                 {
                   "pointer-events-none bg-[#bbbbcf]": clicked,
-                  "mdl:bg-[#2c3c8d]": topVoters.some(
+                  "mdl:bg-[#3238ad]": topVoters.some(
                     (topVoter) => topVoter.id === user.id,
                   ),
                 },

@@ -17,6 +17,7 @@ import { ChoiceType } from "@/types/quiz.types";
 import { RefreshCcw } from "lucide-react";
 import { GoHomeButton } from "../button/go-home-button";
 import { EmojiComponent } from "../emoji-component";
+import { removeIsAbledInstaButton } from "@/lib/instaLocalStorage";
 
 export const ChoiceList = () => {
   const [choiceList, setChoiceList] = useState<ChoiceType[]>([]);
@@ -46,7 +47,10 @@ export const ChoiceList = () => {
 
   return (
     <div className="flex h-full flex-col items-center gap-4">
-      <h1 className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl">
+      <h1
+        onClick={removeIsAbledInstaButton}
+        className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl"
+      >
         Funnection OX 질문
       </h1>
       <RefreshCcw

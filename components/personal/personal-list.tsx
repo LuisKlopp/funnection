@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { RefreshCcw } from "lucide-react";
 import { GoHomeButton } from "../button/go-home-button";
 import { UserType } from "@/types/user.types";
+import { saveIsAbledInstaButton } from "@/lib/instaLocalStorage";
 
 export const PersonalList = () => {
   const [userList, setUserList] = useState<UserType[]>([]);
@@ -37,7 +38,10 @@ export const PersonalList = () => {
 
   return (
     <div className="flex h-full flex-col items-center gap-4">
-      <h1 className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl">
+      <h1
+        onClick={saveIsAbledInstaButton}
+        className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl"
+      >
         Funnection 퍼스널 페이퍼
       </h1>
       <RefreshCcw

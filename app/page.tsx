@@ -1,4 +1,5 @@
 import { LinkButton } from "@/components/button/link-button";
+import { InstaButton } from "@/components/insta-button";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <LinkButton href="/choice-page" title="Funnection OX" />
         <LinkButton href="/question-page" title="Funnection 단답" />
         <LinkButton href="/balance-page" title="Funnection 밸런스" />
+        <InstaButton />
       </div>
     </div>
   );
