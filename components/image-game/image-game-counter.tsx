@@ -9,15 +9,19 @@ import { ImagePictureBox } from "../image-picture-box";
 
 interface ImageGameCounterProps {
   imageId: number;
-  imageUsers: ImageGameUserType[];
+  initialImageUsers: ImageGameUserType[];
 }
 
 export const ImageGameCounter = ({
   imageId,
-  imageUsers,
+  initialImageUsers,
 }: ImageGameCounterProps) => {
   const [clicked, setClicked] = useState<boolean>(false);
-  const [topVoters, setTopVoters] = useState<number[]>([]);
+  const [topVoters, setTopVoters] = useState<
+    { id: number; votes: number }[]
+  >([]);
+  const [imageUsers, setImageUsers] =
+    useState<ImageGameUserType[]>(initialImageUsers);
 
   const handleAddVote = async (userId: number) => {
     try {
@@ -42,13 +46,14 @@ export const ImageGameCounter = ({
 
     const topVoters = sortedUsers
       .filter((user) => user.votes === maxVotes)
-      .map((user) => user.id);
+      .map((user) => ({ id: user.id, votes: user.votes }));
 
     setTopVoters(topVoters);
+    setImageUsers(users);
   };
 
   return (
-    <div className="flex w-full flex-col gap-20">
+    <div className="flex w-full flex-col gap-24">
       <div className="flex w-full flex-col flex-wrap items-center justify-center gap-4 mdl:flex-row mdl:gap-10">
         {imageUsers.map((user) => {
           const userImage = USER_LIST.find(
@@ -63,7 +68,9 @@ export const ImageGameCounter = ({
                 "mdl:w-26 user-button flex w-[70%] cursor-pointer items-center gap-4 rounded-lg bg-white shadow-xl mdl:pointer-events-none mdl:w-auto mdl:flex-col mdl:bg-inherit mdl:shadow-none",
                 {
                   "pointer-events-none bg-[#bbbbcf]": clicked,
-                  "mdl:bg-[#2c3c8d]": topVoters.includes(user.id),
+                  "mdl:bg-[#2c3c8d]": topVoters.some(
+                    (topVoter) => topVoter.id === user.id,
+                  ),
                 },
               )}
             >
@@ -73,12 +80,23 @@ export const ImageGameCounter = ({
                   className={cn(
                     "text-base text-slate-700 mdl:text-lg",
                     {
-                      "mdl:text-white": topVoters.includes(user.id),
+                      "mdl:text-white": topVoters.some(
+                        (topVoter) => topVoter.id === user.id,
+                      ),
                     },
                   )}
                 >
                   {user.nickname}
                 </span>
+              </div>
+              <div
+                className={cn("hidden pb-2 text-lg", {
+                  "text-white mdl:block": topVoters.some(
+                    (topVoter) => topVoter.id === user.id,
+                  ),
+                })}
+              >
+                <span>{user.votes}</span>
               </div>
             </div>
           );

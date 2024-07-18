@@ -32,7 +32,7 @@ const ImageGameDetailPage = async ({
       </div>
       <ImageGameCounter
         imageId={imageQuestion.id}
-        imageUsers={imageUsers}
+        initialImageUsers={imageUsers}
       />
     </div>
   );
