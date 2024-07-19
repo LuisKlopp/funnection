@@ -51,7 +51,7 @@ export const PersonalCounter = ({ userId }: PersonalCounterProps) => {
       </div>
       <button
         onClick={handleShowResults}
-        className="button-base custom-button box-shadow-03 w-[150px]"
+        className="button-base custom-button box-shadow-03 hidden w-[150px]"
       >
         메시지 확인
       </button>
