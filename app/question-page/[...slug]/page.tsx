@@ -1,6 +1,6 @@
 import { QuestionTitle } from "@/components/question-title";
+import { QuestionCounter } from "@/components/question/question-counter";
 import { QuestionSubmitBox } from "@/components/question/question-submit-box";
-import { ReloadButton } from "@/components/question/reload-button";
 import { QuestionType } from "@/types/question.types";
 import { MoveLeft } from "lucide-react";
 import Link from "next/link";
@@ -50,22 +50,7 @@ const QuestionDetailPage = async ({
       <div className="w-full mdl:hidden">
         <QuestionSubmitBox questionId={id} />
       </div>
-      <div className="hidden w-[500px] flex-col items-center gap-10 mdl:flex">
-        <div className="flex w-full flex-col gap-2">
-          {question.answers.map((answer, index) => (
-            <div
-              key={answer.id}
-              className="fade-in-up rounded-lg bg-zinc-200 px-4 py-2 text-[25px] shadow-lg"
-            >
-              <span className="text-slate-500">{index + 1}. </span>
-              <span className="font-normal text-slate-600">
-                {answer.answer}
-              </span>
-            </div>
-          ))}
-        </div>
-        <ReloadButton />
-      </div>
+      <QuestionCounter questionId={id} />
     </div>
   );
 };

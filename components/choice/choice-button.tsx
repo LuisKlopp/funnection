@@ -29,7 +29,7 @@ export const ChoiceButton = ({
       >
         <span className={className}>{choiceType}</span>
       </button>
-      <div className="hidden mdl:block">
+      <div className="fade-in-up hidden mdl:block">
         <span className="text-5xl font-bold text-slate-700">
           {count}
         </span>
