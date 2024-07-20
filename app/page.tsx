@@ -13,7 +13,7 @@ export default function Home() {
       </Link>
       <div className="flex w-full flex-col items-center justify-center gap-4">
         <LinkButton href="/choice-page" title="Funnection OX" />
-        <LinkButton href="/question-page" title="Funnection 단답" />
+        <LinkButton href="/question-page" title="Funnection 문답" />
         <LinkButton href="/balance-page" title="Funnection 밸런스" />
         <InstaButton />
       </div>

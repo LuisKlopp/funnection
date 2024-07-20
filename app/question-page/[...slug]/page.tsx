@@ -39,7 +39,7 @@ const QuestionDetailPage = async ({
       <div className="flex w-full justify-center gap-4 px-4">
         <div>
           <span className="text-center text-3xl text-slate-700 mdl:hidden">
-            단답 {question.id}번 질문
+            문답 {question.id}번 질문
           </span>
         </div>
         <div className="hidden w-full justify-center mdl:flex">

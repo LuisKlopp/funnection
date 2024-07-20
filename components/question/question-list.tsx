@@ -47,7 +47,7 @@ export const QuestionList = () => {
   return (
     <div className="flex h-full flex-col items-center gap-4">
       <h1 className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl">
-        Funnection 단답 질문
+        Funnection 문답 질문
       </h1>
       <RefreshCcw
         onClick={deleteQuestions}
