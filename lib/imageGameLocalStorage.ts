@@ -43,3 +43,25 @@ export const saveClickedImageGameList = (id: number) => {
     }
   }
 };
+export const getIsAbledImageGameButton = () => {
+  if (typeof window !== "undefined") {
+    const data = localStorage.getItem("isAbledImageGameButton");
+    return data ? JSON.parse(data) === true : false;
+  }
+  return false;
+};
+
+export const saveIsAbledImageGameButton = () => {
+  if (typeof window !== "undefined") {
+    localStorage.setItem(
+      "isAbledImageGameButton",
+      JSON.stringify(true),
+    );
+  }
+};
+
+export const removeIsAbledImageGameButton = () => {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("isAbledImageGameButton");
+  }
+};

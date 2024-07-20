@@ -17,6 +17,7 @@ import {
 } from "@/lib/questionLocalStorage";
 import { GoHomeButton } from "../button/go-home-button";
 import { EmojiComponent } from "../emoji-component";
+import { removeIsAbledImageGameButton } from "@/lib/imageGameLocalStorage";
 
 export const QuestionList = () => {
   const [questions, setQuestions] = useState<QuestionType[]>([]);
@@ -46,7 +47,10 @@ export const QuestionList = () => {
 
   return (
     <div className="flex h-full flex-col items-center gap-4">
-      <h1 className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl">
+      <h1
+        onClick={removeIsAbledImageGameButton}
+        className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl"
+      >
         Funnection 문답 질문
       </h1>
       <RefreshCcw

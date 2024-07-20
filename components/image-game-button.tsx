@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { LinkButton } from "./button/link-button";
-import { getIsAbledInstaButton } from "@/lib/instaLocalStorage";
+import { getIsAbledImageGameButton } from "@/lib/imageGameLocalStorage";
 
-export const InstaButton = () => {
+export const ImageGameButton = () => {
   const [isAbled, setIsAbled] = useState(false);
 
   useEffect(() => {
-    const abled = getIsAbledInstaButton();
+    const abled = getIsAbledImageGameButton();
     setIsAbled(abled);
   }, []);
 
@@ -16,5 +16,7 @@ export const InstaButton = () => {
     return null;
   }
 
-  return <LinkButton href="/insta-page" title="인스타 공유" />;
+  return (
+    <LinkButton href="/image-page" title="Funnection 이미지 게임" />
+  );
 };
