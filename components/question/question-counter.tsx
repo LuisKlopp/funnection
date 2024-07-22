@@ -7,6 +7,14 @@ interface QuestionCounterProps {
   questionId: string;
 }
 
+const shuffleArray = (array: any[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 export const QuestionCounter = ({
   questionId,
 }: QuestionCounterProps) => {
@@ -16,7 +24,8 @@ export const QuestionCounter = ({
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_BASE_URL}/question/${questionId}`,
     );
-    setAnswerData(response.data.answers);
+    const shuffledAnswers = shuffleArray(response.data.answers);
+    setAnswerData(shuffledAnswers);
   };
 
   return (
