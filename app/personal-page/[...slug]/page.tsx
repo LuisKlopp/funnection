@@ -3,7 +3,6 @@ import Image from "next/image";
 
 import { fetchUser } from "@/api/fetchPersonalList";
 import { PersonalSubmitBox } from "@/components/personal/personal-submit-box";
-import { PersonalCounter } from "@/components/personal/personal-counter";
 import { USER_LIST, UserImageType } from "@/constants/user.constants";
 
 type PersonalDetailPageProps = {
@@ -41,9 +40,6 @@ const PersonalDetailPage = async ({
             {user.nickname} 님
           </span>
         </div>
-      </div>
-      <div className="z-10 hidden mdl:block">
-        <PersonalCounter userId={user.id} />
       </div>
     </div>
   );

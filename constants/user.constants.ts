@@ -45,4 +45,8 @@ export const USER_LIST: UserImageType[] = [
     id: 8,
     src: eighthImage,
   },
+  {
+    id: 9,
+    src: ManImage,
+  },
 ];
