@@ -1,11 +1,9 @@
 "use client";
 
 import { ImageGameUserType } from "@/types/imageGame.types";
-import { USER_LIST, UserImageType } from "@/constants/user.constants";
 import axios from "axios";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-// import { removeLastUser } from "@/lib/utils";
 import { ImagePictureBox } from "../image-picture-box";
 
 interface ImageGameCounterProps {
@@ -23,7 +21,6 @@ export const ImageGameCounter = ({
   >([]);
   const [imageUsers, setImageUsers] =
     useState<ImageGameUserType[]>(initialImageUsers);
-  // const s3BaseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
 
   const handleAddVote = async (userId: number) => {
     try {
@@ -58,10 +55,6 @@ export const ImageGameCounter = ({
     <div className="flex w-full flex-col gap-24">
       <div className="flex w-full flex-col flex-wrap items-center justify-center gap-4 mdl:flex-row mdl:gap-10">
         {imageUsers.map((user) => {
-          const userImage = USER_LIST.find(
-            (userImage) => userImage.id === user.id,
-          );
-          const src = (userImage as UserImageType).src;
           return (
             <div
               key={user.id}
@@ -77,8 +70,9 @@ export const ImageGameCounter = ({
               )}
             >
               <ImagePictureBox
-                src={src}
-                // src={`${s3BaseUrl}/funnection-1.png`}
+                userId={user.id}
+                checkImage={user.checkImagePath}
+                gender={user.gender}
               />
               <div className="p-2">
                 <span

@@ -2,7 +2,7 @@ import { UserType } from "@/types/user.types";
 
 export const fetchUserList = async (): Promise<UserType[]> => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/users`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/history-user/current-users`,
     {
       cache: "no-cache",
     },
@@ -13,7 +13,7 @@ export const fetchUserList = async (): Promise<UserType[]> => {
 
 export const fetchUser = async (id: string): Promise<UserType> => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/users/${id}`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/history-user/${id}`,
     {
       cache: "no-cache",
     },

@@ -8,6 +8,9 @@ export interface ImageGameUserType {
   nickname: string;
   votes: number;
   gender: string;
+  generateString: string;
+  visitCount: string;
+  checkImagePath: number;
 }
 
 export interface ImageGameDetailType {

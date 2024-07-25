@@ -17,7 +17,7 @@ export const PersonalSubmitBox = ({
 
   const handleSubmit = async () => {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/users/${personalId}/answers`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/history-user/${personalId}/answers`,
       {
         method: "POST",
         headers: {

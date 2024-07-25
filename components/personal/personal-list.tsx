@@ -1,10 +1,6 @@
 "use client";
 
 import { fetchUserList } from "@/api/fetchPersonalList";
-import {
-  USER_LIST,
-  UserImageType,
-} from "../../constants/user.constants";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -17,6 +13,8 @@ import { RefreshCcw } from "lucide-react";
 import { GoHomeButton } from "../button/go-home-button";
 import { UserType } from "@/types/user.types";
 import { saveIsAbledInstaButton } from "@/lib/instaLocalStorage";
+import ManImage from "@/public/man-image.png";
+import WomanImage from "@/public/woman-image.png";
 
 export const PersonalList = () => {
   const [userList, setUserList] = useState<UserType[]>([]);
@@ -51,12 +49,10 @@ export const PersonalList = () => {
       />
       <div className="flex flex-wrap justify-center gap-5 overflow-y-scroll border-4 border-x-0 border-b-slate-500 border-t-slate-500 p-4 md:gap-10 mdl:border-none">
         {userList.map((user) => {
-          const userImage = USER_LIST.find(
-            (img) => img.id === user.id,
-          );
-
-          const src = (userImage as UserImageType).src;
-
+          const s3BaseUrl = process.env.NEXT_PUBLIC_S3_BASE_URL;
+          const checkIsMan =
+            user.gender === "M" ? ManImage : WomanImage;
+          const imageUrl = `${s3BaseUrl}/funnection-${user.id}.webp`;
           return (
             <Link
               key={user.id}
@@ -68,7 +64,10 @@ export const PersonalList = () => {
                   className="h-full w-full rounded-lg"
                   alt="default-image"
                   priority
-                  src={src}
+                  src={user.checkImagePath ? imageUrl : checkIsMan}
+                  width={50}
+                  height={50}
+                  sizes="100%"
                 />
               </div>
               <div className="text-center text-sm text-slate-700 mdl:text-2xl">
