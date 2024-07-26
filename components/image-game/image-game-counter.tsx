@@ -38,7 +38,7 @@ export const ImageGameCounter = ({
       `${process.env.NEXT_PUBLIC_BASE_URL}/image-game/${imageId}`,
     );
 
-    const users = imageData.data.users;
+    const users = imageData.data.users.slice(0, -1);
 
     const sortedUsers = [...users].sort((a, b) => b.votes - a.votes);
     const maxVotes = sortedUsers[0].votes;

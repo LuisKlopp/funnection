@@ -16,6 +16,8 @@ const ImageGameDetailPage = async ({
   const imageQuestion = imageGame.question;
   const imageUsers = imageGame.users;
 
+  const porLastUser = imageUsers.slice(0, -1);
+
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-10">
       <Link href={"/image-page"} className="absolute left-5 top-5">
@@ -32,7 +34,7 @@ const ImageGameDetailPage = async ({
       </div>
       <ImageGameCounter
         imageId={imageQuestion.id}
-        initialImageUsers={imageUsers}
+        initialImageUsers={porLastUser}
       />
     </div>
   );
