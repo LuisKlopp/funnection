@@ -9,8 +9,6 @@ import { BalanceButton } from "./balance-button";
 
 type BalanceCounterProps = {
   id: string;
-  initialLeft: number;
-  initialRight: number;
   leftAnswer: string;
   rightAnswer: string;
 };
@@ -26,13 +24,11 @@ const fetchBalanceDetail = async (
 
 export const BalanceCounter = ({
   id,
-  initialLeft,
-  initialRight,
   leftAnswer,
   rightAnswer,
 }: BalanceCounterProps) => {
-  const [leftCount, setLeftCount] = useState(initialLeft);
-  const [rightCount, setRightCount] = useState(initialRight);
+  const [leftCount, setLeftCount] = useState(0);
+  const [rightCount, setRightCount] = useState(0);
   const [clicked, setClicked] = useState<string | null>(null);
   const [isBalanced, setIsBalanced] = useState(false);
 

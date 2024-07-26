@@ -9,8 +9,6 @@ import { ChoiceButton } from "./choice-button";
 
 type ChoiceCounterProps = {
   id: string;
-  initialLeft: number;
-  initialRight: number;
 };
 
 const fetchChoiceDetail = async (id: string): Promise<ChoiceType> => {
@@ -20,13 +18,9 @@ const fetchChoiceDetail = async (id: string): Promise<ChoiceType> => {
   return response.data;
 };
 
-export const ChoiceCounter = ({
-  id,
-  initialLeft,
-  initialRight,
-}: ChoiceCounterProps) => {
-  const [yesCount, setYesCount] = useState(initialLeft);
-  const [noCount, setNoCount] = useState(initialRight);
+export const ChoiceCounter = ({ id }: ChoiceCounterProps) => {
+  const [yesCount, setYesCount] = useState(0);
+  const [noCount, setNoCount] = useState(0);
   const [clicked, setClicked] = useState<string | null>(null);
 
   const updateResults = async () => {

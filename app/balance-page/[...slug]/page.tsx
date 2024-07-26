@@ -28,8 +28,6 @@ const BalanceDetailPage = async ({
       <div className="w-full">
         <BalanceCounter
           id={id}
-          initialLeft={balance.leftCount}
-          initialRight={balance.rightCount}
           leftAnswer={balance.leftAnswer}
           rightAnswer={balance.rightAnswer}
         />

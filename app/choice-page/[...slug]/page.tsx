@@ -30,11 +30,7 @@ const ChoiceDetailPage = async ({
         </div>
       </div>
       <div className="w-full">
-        <ChoiceCounter
-          id={id}
-          initialLeft={choice.yesCount}
-          initialRight={choice.noCount}
-        />
+        <ChoiceCounter id={id} />
       </div>
     </div>
   );
