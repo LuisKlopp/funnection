@@ -46,12 +46,9 @@ export const BalanceList = () => {
 
   return (
     <div className="flex h-full flex-col items-center gap-4">
-      <Link
-        href={"/balance-event-page"}
-        className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl"
-      >
+      <h1 className="pt-5 text-2xl font-medium text-slate-700 md:pb-10 md:pt-32 mdl:text-4xl">
         Funnection 밸런스 질문
-      </Link>
+      </h1>
       <RefreshCcw
         onClick={deleteBalanceList}
         size={32}
