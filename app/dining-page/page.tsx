@@ -17,10 +17,10 @@ export default async function DiningPage() {
           <span className="text-xl text-[#478324]">
             2시간 추가 대관
           </span>
-          <span className="text-xl">&nbsp;+&nbsp;</span>
-          <span className="text-xl text-[#8f1e1e]">
+          {/* <span className="text-xl">&nbsp;+&nbsp;</span> */}
+          {/* <span className="text-xl text-[#8f1e1e]">
             호스트가 준비한 와인
-          </span>
+          </span> */}
           <span className="text-xl">&nbsp;+&nbsp;</span>
           <span className="text-xl text-[#255099]">
             맥주 or 음료 한 캔 😆
