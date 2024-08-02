@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ImagePictureBox } from "../image-picture-box";
+import { fetchImageGame } from "@/api/fetchImageGameList";
 
 interface ImageGameCounterProps {
   imageId: number;
@@ -34,11 +35,9 @@ export const ImageGameCounter = ({
   };
 
   const handleShowResults = async () => {
-    const imageData = await axios.get(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/image-game/${imageId}`,
-    );
+    const imageData = await fetchImageGame(String(imageId));
 
-    const users = imageData.data.users.slice(0, -1);
+    const users = imageData.users.filter((user) => user.id !== 28);
 
     const sortedUsers = [...users].sort((a, b) => b.votes - a.votes);
     const maxVotes = sortedUsers[0].votes;

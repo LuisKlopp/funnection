@@ -11,6 +11,7 @@ export interface ImageGameUserType {
   generateString: string;
   visitCount: string;
   checkImagePath: number;
+  isCurrentUser: number;
 }
 
 export interface ImageGameDetailType {
