@@ -9,7 +9,7 @@ export const EmojiComponent = ({ category }: EmojiComponentProps) => {
     EMOJI_LIST[category];
 
   return (
-    <div className="absolute right-[-10px] top-[-25px] hidden h-5 w-5 mdl:block">
+    <div className="absolute right-[-10px] top-[-25px] h-5 w-5">
       {handleDisplayEmoji(category)}
     </div>
   );
