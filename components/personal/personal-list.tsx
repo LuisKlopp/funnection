@@ -70,7 +70,11 @@ export const PersonalList = () => {
             >
               <div className="user-list-button relative h-36 w-[100px] mdl:h-48 mdl:w-[150px]">
                 {getSubmitUserList().includes(user.id) && (
-                  <div className="absolute h-full w-full bg-gray-800 opacity-50" />
+                  <div className="absolute h-full w-full bg-gray-800 opacity-60">
+                    <span className="absolute bottom-0 text-white">
+                      &nbsp;작성완료
+                    </span>
+                  </div>
                 )}
                 <Image
                   className="h-full w-full rounded-lg"
