@@ -7,6 +7,7 @@ import {
   getUserList,
   saveUserList,
   deleteUserList,
+  getSubmitUserList,
 } from "@/lib/personalLocalStorage";
 import { useEffect, useState } from "react";
 import { RefreshCcw } from "lucide-react";
@@ -22,15 +23,23 @@ export const PersonalList = () => {
   useEffect(() => {
     const localChoiceList = getUserList();
     if (localChoiceList) {
-      setUserList(localChoiceList);
+      const updatedList = moveUserToEnd(localChoiceList, 28);
+      setUserList(updatedList);
       return;
     }
 
     fetchUserList().then((data) => {
-      setUserList(data);
-      saveUserList(data);
+      const updatedList = moveUserToEnd(data, 28);
+      setUserList(updatedList);
+      saveUserList(updatedList);
     });
   }, []);
+
+  const moveUserToEnd = (list: UserType[], id: number) => {
+    const userToMove = list.filter((user) => user.id === id);
+    const remainingUsers = list.filter((user) => user.id !== id);
+    return [...remainingUsers, ...userToMove];
+  };
 
   if (!userList.length) return <div>Loading...</div>;
 
@@ -59,7 +68,10 @@ export const PersonalList = () => {
               href={`/personal-page/${user.id}`}
               className="flex flex-col gap-4"
             >
-              <div className="user-list-button h-36 w-[100px] mdl:h-48 mdl:w-[150px]">
+              <div className="user-list-button relative h-36 w-[100px] mdl:h-48 mdl:w-[150px]">
+                {getSubmitUserList().includes(user.id) && (
+                  <div className="absolute h-full w-full bg-gray-800 opacity-50" />
+                )}
                 <Image
                   className="h-full w-full rounded-lg"
                   alt="default-image"

@@ -4,6 +4,7 @@ import { ChangeEvent, useState } from "react";
 
 import { Button } from "../button/button";
 import { TextArea } from "../text-area";
+import { saveSubmitUserList } from "@/lib/personalLocalStorage";
 
 interface PersonalSubmitBoxProps {
   personalId: string;
@@ -32,6 +33,7 @@ export const PersonalSubmitBox = ({
     if (response.ok) {
       setMessageText("");
       setIsSubmitted(true);
+      saveSubmitUserList(Number(personalId));
     }
   };
 

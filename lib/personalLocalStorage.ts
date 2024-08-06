@@ -19,3 +19,25 @@ export const deleteUserList = () => {
     window.location.reload();
   }
 };
+
+export const getSubmitUserList = () => {
+  if (typeof window !== "undefined") {
+    const data = localStorage.getItem("checkSubmitUsers");
+    return data ? JSON.parse(data) : [];
+  }
+};
+
+export const saveSubmitUserList = (id: number) => {
+  if (typeof window !== "undefined") {
+    if (typeof window !== "undefined") {
+      const clickedImageGameList = getSubmitUserList();
+      if (!clickedImageGameList.includes(id)) {
+        clickedImageGameList.push(id);
+        localStorage.setItem(
+          "checkSubmitUsers",
+          JSON.stringify(clickedImageGameList),
+        );
+      }
+    }
+  }
+};
