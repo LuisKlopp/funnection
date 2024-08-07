@@ -1,7 +1,10 @@
 "use client";
 
 import { ChangeEvent, useState } from "react";
-
+import { jua, kotra, kyobo } from "@/public/fonts/fonts";
+import { pretendard } from "@/public/fonts/fonts";
+import { gamja } from "@/public/fonts/fonts";
+import { jalnan } from "@/public/fonts/fonts";
 import { Button } from "../button/button";
 import { TextArea } from "../text-area";
 import { saveSubmitUserList } from "@/lib/personalLocalStorage";
@@ -10,10 +13,22 @@ interface PersonalSubmitBoxProps {
   personalId: string;
 }
 
+const fonts = [
+  { fontClass: jua.className, fontText: "Jua" },
+  { fontClass: pretendard.className, fontText: "Pretendard" },
+  { fontClass: gamja.className, fontText: "Gamja" },
+  { fontClass: jalnan.className, fontText: "Jalnan" },
+  { fontClass: kyobo.className, fontText: "Kyobo" },
+  { fontClass: kotra.className, fontText: "Kotra" },
+];
+
 export const PersonalSubmitBox = ({
   personalId,
 }: PersonalSubmitBoxProps) => {
   const [messageText, setMessageText] = useState("");
+  const [selectedFont, setSelectedFont] = useState(
+    fonts[0].fontClass,
+  );
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async () => {
@@ -26,6 +41,7 @@ export const PersonalSubmitBox = ({
         },
         body: JSON.stringify({
           message: messageText,
+          font: selectedFont,
         }),
       },
     );
@@ -33,6 +49,7 @@ export const PersonalSubmitBox = ({
     if (response.ok) {
       setMessageText("");
       setIsSubmitted(true);
+      setSelectedFont(fonts[0].fontClass);
       saveSubmitUserList(Number(personalId));
     }
   };
@@ -45,7 +62,22 @@ export const PersonalSubmitBox = ({
         onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
           setMessageText(e.target.value)
         }
+        className={`${selectedFont}`}
       />
+      <div className="flex w-full justify-center gap-4">
+        {fonts.map((font) => (
+          <button
+            key={font.fontClass}
+            onClick={() => setSelectedFont(font.fontClass)}
+            className={`h-10 w-10 rounded-full border ${
+              selectedFont === font.fontClass &&
+              "border-2 border-slate-500"
+            } ${font.fontClass}`}
+          >
+            {font.fontText[0]}
+          </button>
+        ))}
+      </div>
       <Button
         buttonTitle="답변 제출"
         onClick={handleSubmit}

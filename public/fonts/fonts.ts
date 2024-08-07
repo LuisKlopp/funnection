@@ -58,3 +58,39 @@ export const jua = localFont({
     },
   ],
 });
+
+export const gamja = localFont({
+  src: [
+    {
+      path: "./GamjaFlower-Regular.ttf",
+      style: "normal",
+    },
+  ],
+});
+
+export const jalnan = localFont({
+  src: [
+    {
+      path: "./Jalnan2.ttf",
+      style: "normal",
+    },
+  ],
+});
+
+export const kyobo = localFont({
+  src: [
+    {
+      path: "./KyoboHand.ttf",
+      style: "normal",
+    },
+  ],
+});
+
+export const kotra = localFont({
+  src: [
+    {
+      path: "./Kotra-Hope.ttf",
+      style: "normal",
+    },
+  ],
+});
