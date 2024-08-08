@@ -61,7 +61,7 @@ export const PersonalSubmitBox = ({
   };
 
   return (
-    <div className="flex w-full flex-col gap-14">
+    <div className="flex w-full flex-col gap-8">
       <TextArea
         placeholder={`${userNickname}님께 전하고 싶은말을 적어주세요 :)`}
         value={messageText}
@@ -70,7 +70,7 @@ export const PersonalSubmitBox = ({
         }
         className={`${selectedFont}`}
       />
-      <div className="flex w-full justify-center gap-4">
+      <div className="mb-10 flex w-full justify-center gap-4">
         {fonts.map((font) => (
           <button
             key={font.fontClass}
