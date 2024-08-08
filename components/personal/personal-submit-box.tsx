@@ -83,7 +83,7 @@ export const PersonalSubmitBox = ({
         ))}
       </div>
       <Button
-        buttonTitle="답변 제출"
+        buttonTitle="메시지 보내기"
         onClick={handleSubmit}
         className="font-normal"
         disabled={messageText === ""}
