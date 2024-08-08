@@ -73,9 +73,9 @@ export const PersonalSubmitBox = ({
           <button
             key={font.fontClass}
             onClick={() => setSelectedFont(font.fontClass)}
-            className={`h-10 w-10 rounded-full border ${
+            className={`box-shadow-03 h-10 w-10 rounded-full border border-gray-600 ${
               selectedFont === font.fontClass &&
-              "border-2 border-slate-500"
+              "border-[3px] border-slate-800"
             } ${font.fontClass}`}
           >
             F
@@ -85,7 +85,7 @@ export const PersonalSubmitBox = ({
       <Button
         buttonTitle="메시지 보내기"
         onClick={handleSubmit}
-        className="font-normal"
+        className="box-shadow-03 font-normal"
         disabled={messageText === ""}
       />
       {isSubmitted && (
