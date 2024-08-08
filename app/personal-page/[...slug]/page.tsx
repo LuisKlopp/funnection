@@ -26,6 +26,7 @@ const PersonalDetailPage = async ({
       <Link href={"/personal-page"} className="absolute left-5 top-5">
         뒤로가기
       </Link>
+      <div className="h-10"></div>
       <div className="flex w-full flex-col items-center gap-4 mdl:hidden">
         <span className="text-2xl text-slate-700">
           {user.nickname}님의 퍼스널 페이퍼
