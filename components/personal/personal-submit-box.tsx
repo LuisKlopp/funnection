@@ -15,6 +15,7 @@ import { saveSubmitUserList } from "@/lib/personalLocalStorage";
 
 interface PersonalSubmitBoxProps {
   personalId: string;
+  userNickname: string;
 }
 
 const fonts = [
@@ -28,6 +29,7 @@ const fonts = [
 
 export const PersonalSubmitBox = ({
   personalId,
+  userNickname,
 }: PersonalSubmitBoxProps) => {
   const [messageText, setMessageText] = useState("");
   const [selectedFont, setSelectedFont] = useState(
@@ -59,9 +61,9 @@ export const PersonalSubmitBox = ({
   };
 
   return (
-    <div className="flex w-full flex-col gap-12">
+    <div className="flex w-full flex-col gap-10">
       <TextArea
-        placeholder="전하고 싶은말을 적어주세요 :)"
+        placeholder={`${userNickname}님께 전하고 싶은말을 적어주세요 :)`}
         value={messageText}
         onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
           setMessageText(e.target.value)
@@ -81,17 +83,18 @@ export const PersonalSubmitBox = ({
           </button>
         ))}
       </div>
-      <Button
-        buttonTitle="메시지 보내기"
-        onClick={handleSubmit}
-        className="box-shadow-03 font-normal"
-        disabled={messageText === ""}
-      />
-      {isSubmitted && (
+      {isSubmitted ? (
         <div className="flex w-full flex-col items-center">
           <span>게스트님의 정성이 담긴</span>
           <span>메시지가 전달되었습니다!</span>
         </div>
+      ) : (
+        <Button
+          buttonTitle="메시지 보내기"
+          onClick={handleSubmit}
+          className="box-shadow-03 font-normal"
+          disabled={messageText === ""}
+        />
       )}
     </div>
   );

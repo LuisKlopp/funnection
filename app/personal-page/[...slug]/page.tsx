@@ -26,11 +26,14 @@ const PersonalDetailPage = async ({
       <Link href={"/personal-page"} className="absolute left-5 top-5">
         뒤로가기
       </Link>
-      <div className="flex w-full flex-col items-center mdl:hidden">
-        <div className="mb-4 w-[70%] text-2xl text-slate-700">
-          <span>{user.nickname}님께</span>
-        </div>
-        <PersonalSubmitBox personalId={id} />
+      <div className="flex w-full flex-col items-center gap-4 mdl:hidden">
+        <span className="text-2xl text-slate-700">
+          {user.nickname}님의 퍼스널 페이퍼
+        </span>
+        <PersonalSubmitBox
+          personalId={id}
+          userNickname={user.nickname}
+        />
       </div>
       <div className="flex flex-col">
         <div className="hidden flex-col gap-4 mdl:flex mdl:items-center">
