@@ -1,10 +1,14 @@
 "use client";
 
 import { ChangeEvent, useState } from "react";
-import { jua, kotra, kyobo } from "@/public/fonts/fonts";
-import { pretendard } from "@/public/fonts/fonts";
-import { gamja } from "@/public/fonts/fonts";
-import { jalnan } from "@/public/fonts/fonts";
+import {
+  jua,
+  kotra,
+  kyobo,
+  pretendard,
+  gamja,
+  jalnan,
+} from "@/public/fonts/fonts";
 import { Button } from "../button/button";
 import { TextArea } from "../text-area";
 import { saveSubmitUserList } from "@/lib/personalLocalStorage";
@@ -74,7 +78,7 @@ export const PersonalSubmitBox = ({
               "border-2 border-slate-500"
             } ${font.fontClass}`}
           >
-            {font.fontText[0]}
+            F
           </button>
         ))}
       </div>

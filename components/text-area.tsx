@@ -23,7 +23,7 @@ export const TextArea = ({
     <div className="flex w-full items-center justify-center">
       <textarea
         className={cn(
-          "textarea-custom rounded-lg text-lg",
+          "textarea-custom rounded-lg text-base",
           className,
         )}
         placeholder={placeholder}
