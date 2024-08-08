@@ -61,7 +61,7 @@ export const PersonalSubmitBox = ({
   };
 
   return (
-    <div className="flex w-full flex-col gap-10">
+    <div className="flex w-full flex-col gap-14">
       <TextArea
         placeholder={`${userNickname}님께 전하고 싶은말을 적어주세요 :)`}
         value={messageText}
