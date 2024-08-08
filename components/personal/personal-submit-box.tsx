@@ -73,9 +73,8 @@ export const PersonalSubmitBox = ({
           <button
             key={font.fontClass}
             onClick={() => setSelectedFont(font.fontClass)}
-            className={`box-shadow-03 h-10 w-10 rounded-full border border-gray-600 ${
-              selectedFont === font.fontClass &&
-              "border-[3px] border-slate-800"
+            className={`box-shadow-03 h-10 w-10 rounded-full border border-slate-600 ${
+              selectedFont === font.fontClass && "border-[3px]"
             } ${font.fontClass}`}
           >
             F
